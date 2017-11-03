@@ -214,7 +214,7 @@
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Vista/img/home.png"/>
+                  <Image iconType="3" name="/Vista/img/Inicio.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="INICIO"/>
                 <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -251,7 +251,7 @@
             <Component class="rsbuttom.RSButtonMetro" name="btnControl">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Vista/img/ios.png"/>
+                  <Image iconType="3" name="/Vista/img/Control.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Control"/>
                 <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -286,7 +286,7 @@
             <Component class="rsbuttom.RSButtonMetro" name="btnNuevoTrabajador">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Vista/img/market.png"/>
+                  <Image iconType="3" name="/Vista/img/Nuevo Trabajador.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Nuevo"/>
                 <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -321,7 +321,7 @@
             <Component class="rsbuttom.RSButtonMetro" name="btnListar">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Vista/img/chat.png"/>
+                  <Image iconType="3" name="/Vista/img/Listar.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Listar"/>
                 <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -409,7 +409,7 @@
                   <Color blue="83" green="7e" red="7e" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Vista/img/collection.png"/>
+                  <Image iconType="3" name="/Vista/img/Reporte.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Reporte"/>
                 <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -503,7 +503,7 @@
                   <Color blue="83" green="7e" red="7e" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Vista/img/feeedback.png"/>
+                  <Image iconType="3" name="/Vista/img/NuevoHorario.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Nuevo"/>
                 <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -543,7 +543,7 @@
                   <Color blue="83" green="7e" red="7e" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Vista/img/collection.png"/>
+                  <Image iconType="3" name="/Vista/img/Asignar.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Asignar"/>
                 <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">

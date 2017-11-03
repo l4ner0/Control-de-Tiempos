@@ -132,7 +132,7 @@ public class IUControlTiempos extends javax.swing.JFrame {
         );
 
         btnInicio.setBackground(new java.awt.Color(204, 204, 204));
-        btnInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/img/home.png"))); // NOI18N
+        btnInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Inicio.png"))); // NOI18N
         btnInicio.setText("INICIO");
         btnInicio.setColorHover(new java.awt.Color(204, 204, 204));
         btnInicio.setColorNormal(new java.awt.Color(204, 204, 204));
@@ -157,7 +157,7 @@ public class IUControlTiempos extends javax.swing.JFrame {
             }
         });
 
-        btnControl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/img/ios.png"))); // NOI18N
+        btnControl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Control.png"))); // NOI18N
         btnControl.setText("Control");
         btnControl.setColorHover(new java.awt.Color(204, 204, 204));
         btnControl.setColorNormal(new java.awt.Color(214, 217, 223));
@@ -178,7 +178,7 @@ public class IUControlTiempos extends javax.swing.JFrame {
             }
         });
 
-        btnNuevoTrabajador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/img/market.png"))); // NOI18N
+        btnNuevoTrabajador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Nuevo Trabajador.png"))); // NOI18N
         btnNuevoTrabajador.setText("Nuevo");
         btnNuevoTrabajador.setColorHover(new java.awt.Color(204, 204, 204));
         btnNuevoTrabajador.setColorNormal(new java.awt.Color(214, 217, 223));
@@ -199,7 +199,7 @@ public class IUControlTiempos extends javax.swing.JFrame {
             }
         });
 
-        btnListar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/img/chat.png"))); // NOI18N
+        btnListar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Listar.png"))); // NOI18N
         btnListar.setText("Listar");
         btnListar.setColorHover(new java.awt.Color(204, 204, 204));
         btnListar.setColorNormal(new java.awt.Color(214, 217, 223));
@@ -247,7 +247,7 @@ public class IUControlTiempos extends javax.swing.JFrame {
 
         btnReporte.setBackground(new java.awt.Color(214, 217, 223));
         btnReporte.setForeground(new java.awt.Color(126, 126, 131));
-        btnReporte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/img/collection.png"))); // NOI18N
+        btnReporte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Reporte.png"))); // NOI18N
         btnReporte.setText("Reporte");
         btnReporte.setColorHover(new java.awt.Color(204, 204, 204));
         btnReporte.setColorNormal(new java.awt.Color(214, 217, 223));
@@ -297,7 +297,7 @@ public class IUControlTiempos extends javax.swing.JFrame {
 
         btnNuevoHorario.setBackground(new java.awt.Color(214, 217, 223));
         btnNuevoHorario.setForeground(new java.awt.Color(126, 126, 131));
-        btnNuevoHorario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/img/feeedback.png"))); // NOI18N
+        btnNuevoHorario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/img/NuevoHorario.png"))); // NOI18N
         btnNuevoHorario.setText("Nuevo");
         btnNuevoHorario.setColorHover(new java.awt.Color(204, 204, 204));
         btnNuevoHorario.setColorNormal(new java.awt.Color(214, 217, 223));
@@ -319,7 +319,7 @@ public class IUControlTiempos extends javax.swing.JFrame {
 
         btnAsignar.setBackground(new java.awt.Color(214, 217, 223));
         btnAsignar.setForeground(new java.awt.Color(126, 126, 131));
-        btnAsignar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/img/collection.png"))); // NOI18N
+        btnAsignar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Asignar.png"))); // NOI18N
         btnAsignar.setText("Asignar");
         btnAsignar.setColorHover(new java.awt.Color(204, 204, 204));
         btnAsignar.setColorNormal(new java.awt.Color(214, 217, 223));
