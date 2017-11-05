@@ -6,7 +6,12 @@
 
 package controldetiempos;
 
+import Controlador.ControladorCDT;
+import Modelo.Conexion;
+import Modelo.EmpleadoDAO;
 import Vista.IUControlTiempos;
+import Vista.Ventanas.VtnNuevoTrabajador;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,10 +22,12 @@ public class ControlDeTiempos {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        IUControlTiempos principal = new IUControlTiempos();
+    public static void main(String[] args) {      
         
-        principal.setVisible(true);  
+        IUControlTiempos controlTiempos = new IUControlTiempos();
+        VtnNuevoTrabajador vtnNuevoTrabajador = new VtnNuevoTrabajador();
+        ControladorCDT  control = new ControladorCDT(controlTiempos,vtnNuevoTrabajador);
+        controlTiempos.setVisible(true);
     }
     
 }

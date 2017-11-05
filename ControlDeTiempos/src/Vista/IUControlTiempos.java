@@ -6,6 +6,8 @@
 
 package Vista;
 
+import Controlador.ControladorCDT;
+import Modelo.EmpleadoDAO;
 import java.awt.Color;
 import Vista.Ventanas.*;
 
@@ -111,7 +113,6 @@ public class IUControlTiempos extends javax.swing.JFrame {
 
         lblTrabajador.setBackground(new java.awt.Color(153, 153, 153));
         lblTrabajador.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblTrabajador.setForeground(new java.awt.Color(126, 126, 131));
         lblTrabajador.setText("TRABAJADOR");
 
         javax.swing.GroupLayout pnlTrabajadorLayout = new javax.swing.GroupLayout(pnlTrabajador);
@@ -225,7 +226,6 @@ public class IUControlTiempos extends javax.swing.JFrame {
 
         lblAsistencia.setBackground(new java.awt.Color(153, 153, 153));
         lblAsistencia.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblAsistencia.setForeground(new java.awt.Color(126, 126, 131));
         lblAsistencia.setText("ASISTENCIA");
 
         javax.swing.GroupLayout pnlAsistenciaLayout = new javax.swing.GroupLayout(pnlAsistencia);
@@ -275,7 +275,6 @@ public class IUControlTiempos extends javax.swing.JFrame {
 
         lblHorarios.setBackground(new java.awt.Color(153, 153, 153));
         lblHorarios.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblHorarios.setForeground(new java.awt.Color(126, 126, 131));
         lblHorarios.setText("HORARIOS");
 
         javax.swing.GroupLayout pnlHorariosLayout = new javax.swing.GroupLayout(pnlHorarios);
@@ -486,15 +485,14 @@ public class IUControlTiempos extends javax.swing.JFrame {
 
     private void btnNuevoTrabajadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoTrabajadorActionPerformed
         new CambiaPanel(pnlCentral,new pnlNuevoTrabajador());  
-        VtnNuevoTrabajador nuevoTrabajador = new VtnNuevoTrabajador();
-          
+        /*VtnNuevoTrabajador nuevoTrabajador = new VtnNuevoTrabajador();
         if(ventana.ventanaNuevoTrabajador==false)
         {
             nuevoTrabajador.setVisible(true);
             nuevoTrabajador.setLocationRelativeTo(this);
             ventana.ventanaNuevoTrabajador=true;
         }
-        
+        */
         if(this.btnNuevoTrabajador.isSelected())
         {
             this.btnNuevoTrabajador.setColorNormal(new Color(214,217,223));
