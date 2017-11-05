@@ -6,6 +6,8 @@
 
 package Modelo;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 
@@ -25,14 +27,14 @@ public class EmpleadoDAO {
         String DNI,String fechaNacimiento,String DistritoResidencia,
         String direccion,String telefono,String correoElectronico,
         String asignacionFamiliar,int idArea,int idPuesto,
-        int idRetencion){
+        int idRetencion, FileInputStream fotoEmpleado, File rutaFoto){
         
         boolean registro=false;
         try
         {
            Connection accesoDB=conexion.getConexion();
            CallableStatement cs = accesoDB.prepareCall("{call usp_graba_empleado("
-                   + "?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
+                   + "?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
            
            cs.setString(1,idEmpleado);
            cs.setString(2,nombres);
@@ -49,6 +51,7 @@ public class EmpleadoDAO {
            cs.setInt(13,idArea);
            cs.setInt(14,idPuesto);
            cs.setInt(15,idRetencion);
+           cs.setBinaryStream(16,fotoEmpleado,(int)rutaFoto.length());
            
            int filasAfect=cs.executeUpdate();
            if(filasAfect>0)

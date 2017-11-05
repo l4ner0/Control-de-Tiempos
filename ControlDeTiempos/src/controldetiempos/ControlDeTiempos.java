@@ -6,7 +6,7 @@
 
 package controldetiempos;
 
-import Controlador.ControladorCDT;
+import Controlador.ControladorUICT;
 import Modelo.Conexion;
 import Modelo.EmpleadoDAO;
 import Vista.IUControlTiempos;
@@ -26,7 +26,8 @@ public class ControlDeTiempos {
         
         IUControlTiempos controlTiempos = new IUControlTiempos();
         VtnNuevoTrabajador vtnNuevoTrabajador = new VtnNuevoTrabajador();
-        ControladorCDT  control = new ControladorCDT(controlTiempos,vtnNuevoTrabajador);
+        ControladorUICT  control = new ControladorUICT(controlTiempos,
+                vtnNuevoTrabajador);
         controlTiempos.setVisible(true);
     }
     

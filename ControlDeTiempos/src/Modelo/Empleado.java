@@ -6,6 +6,8 @@
 
 package Modelo;
 
+import java.io.FileInputStream;
+
 /**
  *
  * @author diego
@@ -26,6 +28,7 @@ public class Empleado {
     int idArea;
     int idPuesto;
     int idRetencion;
+    FileInputStream fotoEmpleado;
     
     public Empleado(){
         idEmpleado="";
@@ -43,6 +46,15 @@ public class Empleado {
         idArea=0;
         idPuesto=0;
         idRetencion=0;
+        fotoEmpleado=null;
+    }
+
+    public FileInputStream getFotoEmpleado() {
+        return fotoEmpleado;
+    }
+
+    public void setFotoEmpleado(FileInputStream fotoEmpleado) {
+        this.fotoEmpleado = fotoEmpleado;
     }
 
     public String getIdEmpleado() {

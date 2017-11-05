@@ -6,7 +6,7 @@
 
 package Vista;
 
-import Controlador.ControladorCDT;
+import Controlador.ControladorUICT;
 import Modelo.EmpleadoDAO;
 import java.awt.Color;
 import Vista.Ventanas.*;
@@ -19,7 +19,7 @@ public class IUControlTiempos extends javax.swing.JFrame {
     /**
      * Creates new form Principal
      */
-    variableStatica ventana = new variableStatica();
+    
     public IUControlTiempos() {
         initComponents();
         this.setLocationRelativeTo(this);
@@ -485,14 +485,8 @@ public class IUControlTiempos extends javax.swing.JFrame {
 
     private void btnNuevoTrabajadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoTrabajadorActionPerformed
         new CambiaPanel(pnlCentral,new pnlNuevoTrabajador());  
-        /*VtnNuevoTrabajador nuevoTrabajador = new VtnNuevoTrabajador();
-        if(ventana.ventanaNuevoTrabajador==false)
-        {
-            nuevoTrabajador.setVisible(true);
-            nuevoTrabajador.setLocationRelativeTo(this);
-            ventana.ventanaNuevoTrabajador=true;
-        }
-        */
+        
+        
         if(this.btnNuevoTrabajador.isSelected())
         {
             this.btnNuevoTrabajador.setColorNormal(new Color(214,217,223));
