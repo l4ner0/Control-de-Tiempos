@@ -7,7 +7,7 @@
 package controldetiempos;
 
 import Controlador.ControladorUICT;
-import Modelo.Conexion;
+import util.Conexion;
 import Modelo.EmpleadoDAO;
 import Vista.IUControlTiempos;
 import Vista.Ventanas.VtnNuevoTrabajador;

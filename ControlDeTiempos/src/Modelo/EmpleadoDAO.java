@@ -6,6 +6,7 @@
 
 package Modelo;
 
+import util.Conexion;
 import java.io.File;
 import java.io.FileInputStream;
 import java.sql.CallableStatement;
