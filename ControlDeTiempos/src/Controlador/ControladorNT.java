@@ -7,6 +7,7 @@
 package Controlador;
 
 import Modelo.EmpleadoDAO;
+import Vista.Ventanas.IdentifAcceso;
 import Vista.Ventanas.VtnNuevoTrabajador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -33,14 +34,18 @@ public class ControladorNT implements ActionListener {
         this.vtnNuevoTrabajador=vtnNuevoTrabajador;
         this.empleadoDAO = empleadoDAO;
         this.vtnNuevoTrabajador.btnGrabar.addActionListener(this);
+        this.vtnNuevoTrabajador.btnIdentificacion.addActionListener(this);
     }
     
     public void actionPerformed(ActionEvent e){
         
-        if(e.getSource()==vtnNuevoTrabajador.btnBuscarFoto){
-            
+        if(e.getSource()==vtnNuevoTrabajador.btnIdentificacion){
+            JOptionPane.showMessageDialog(null,"Le distes a Identificacion :-)");
+            IdentifAcceso acceso= new IdentifAcceso();
+            ControladorIdentifAcceso controladorAcceso=
+                    new ControladorIdentifAcceso(vtnNuevoTrabajador,acceso);
+            acceso.setVisible(true);
         }
-        
         if(e.getSource()==vtnNuevoTrabajador.btnGrabar)
         {
             if(vtnNuevoTrabajador.rbtnHombre.isSelected())
@@ -50,7 +55,7 @@ public class ControladorNT implements ActionListener {
             {
                   opcionSexo="Mujer";
             }
-            String idEmpleado="02548971";
+            String idEmpleado=generarCodigo();
             String nombres=vtnNuevoTrabajador.txtNom.getText();
             String apellidoPaterno=vtnNuevoTrabajador.txtApPa.getText();
             String apellidoMaterno=vtnNuevoTrabajador.txtApMa.getText();
@@ -87,6 +92,24 @@ public class ControladorNT implements ActionListener {
             }
         }
         
-    }
+    } 
     
+    //utilizar metodo hasta crear areaDAO y puestoDAO
+    public String generarCodigo(){
+        String codigoEmpleado="";
+        String area=(String) vtnNuevoTrabajador.cbArea.getSelectedItem();
+        String puesto=(String) vtnNuevoTrabajador.cbPuesto.getSelectedItem();
+        int numeroEmp= 1000+empleadoDAO.ContarRegistros();   
+        if(Integer.parseInt(area)<10)
+        { 
+            area="0"+area;
+        }
+        if(Integer.parseInt(puesto)<10)
+        {
+            puesto="0"+puesto;
+        }
+        codigoEmpleado=area+puesto+String.valueOf(numeroEmp);
+        
+        return codigoEmpleado;
+    }
 }

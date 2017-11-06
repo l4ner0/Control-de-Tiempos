@@ -26,8 +26,7 @@ public class ControlDeTiempos {
         
         IUControlTiempos controlTiempos = new IUControlTiempos();
         VtnNuevoTrabajador vtnNuevoTrabajador = new VtnNuevoTrabajador();
-        ControladorUICT  control = new ControladorUICT(controlTiempos,
-                vtnNuevoTrabajador);
+        ControladorUICT  control = new ControladorUICT(controlTiempos);
         controlTiempos.setVisible(true);
     }
     

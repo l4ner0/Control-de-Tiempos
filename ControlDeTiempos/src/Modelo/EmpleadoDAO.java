@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.ResultSet;
 
 /**
  *
@@ -63,6 +64,59 @@ public class EmpleadoDAO {
             System.out.println(e);
         }
         return registro;
+    }
+    
+    public int ContarRegistros(){
+        int numRegistros = 0 ;
+        try
+        {
+         Connection accesoDB=conexion.getConexion();
+         CallableStatement cs = accesoDB.prepareCall("{call contar_registros}");
+         ResultSet rs=cs.executeQuery();
+         while(rs.next())
+         {
+             numRegistros++;
+         
+         }
+        }catch(Exception e)
+        {
+            System.out.println(e);
+        }
+        
+        return numRegistros;
+    }
+    
+    //Eliminar una vez que se cree AreasEmpresaDAO y PuestoDAO
+    public String getArea(String nombreArea){
+        String area="";
+        try
+        {
+            Connection accesoDB=conexion.getConexion();
+            CallableStatement cs = accesoDB.prepareCall("");
+            ResultSet rs=cs.executeQuery();
+            area=rs.getString(1);
+            
+        }catch(Exception e)
+        {
+            System.out.println(e);
+        }
+        return area;
+    }
+    
+    public String getPuesto(String nombrePuesto){
+        String puesto="";
+        try
+        {
+            Connection accesoDB=conexion.getConexion();
+            CallableStatement cs = accesoDB.prepareCall("");
+            ResultSet rs=cs.executeQuery();
+            puesto=rs.getString(1);
+            
+        }catch(Exception e)
+        {
+            System.out.println(e);
+        }
+        return puesto;
     }
     
 }

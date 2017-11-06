@@ -22,13 +22,25 @@ public class ControladorUICT implements ActionListener{
     IUControlTiempos iuControlTiempos = new IUControlTiempos();
     variableStatica ventana = new variableStatica();
     
-    public ControladorUICT(IUControlTiempos iuControlTiempos,
-            VtnNuevoTrabajador vtnNuevoTrabajador){
+    public ControladorUICT(IUControlTiempos iuControlTiempos){
         this.iuControlTiempos=iuControlTiempos;
+        
+        this.iuControlTiempos.btnInicio.addActionListener(this);
         this.iuControlTiempos.btnNuevoTrabajador.addActionListener(this);
+        this.iuControlTiempos.btnListar.addActionListener(this);
+        this.iuControlTiempos.btnNuevoHorario.addActionListener(this);
+        this.iuControlTiempos.btnAsignar.addActionListener(this);
+        this.iuControlTiempos.btnControl.addActionListener(this);
+        this.iuControlTiempos.btnReporte.addActionListener(this);
+        
     }
  
     public void actionPerformed(ActionEvent e){
+        if(e.getSource()==iuControlTiempos.btnInicio)
+        {
+            JOptionPane.showMessageDialog(null,"Le distes a Inicio :-)");
+        }
+        
         if(e.getSource()==iuControlTiempos.btnNuevoTrabajador)
         {
             VtnNuevoTrabajador nuevoTrabajador = new VtnNuevoTrabajador();
@@ -40,10 +52,33 @@ public class ControladorUICT implements ActionListener{
                 nuevoTrabajador.setVisible(true);
                 
                 ventana.ventanaNuevoTrabajador=true;
-            }
-            
-            
-                
+            } 
         }
+        
+        if(e.getSource()==iuControlTiempos.btnListar)
+        {
+            JOptionPane.showMessageDialog(null,"Le distes a Listar :-)");
+        }
+        
+        if(e.getSource()==iuControlTiempos.btnNuevoHorario)
+        {
+            JOptionPane.showMessageDialog(null,"Le distes a Nuevo horario :-)");
+        }
+        
+        if(e.getSource()==iuControlTiempos.btnAsignar)
+        {
+            JOptionPane.showMessageDialog(null,"Le distes a Asignar horario :-)");
+        }
+        
+        if(e.getSource()==iuControlTiempos.btnControl)
+        {
+            JOptionPane.showMessageDialog(null,"Le distes a Control de asistencias :-)");
+        }
+        
+        if(e.getSource()==iuControlTiempos.btnReporte)
+        {
+            JOptionPane.showMessageDialog(null,"Le distes a Reporte de asistencias :-)");
+        }
+        
     }
 }
