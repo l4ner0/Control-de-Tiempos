@@ -11,6 +11,7 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import validaciones.ControladorValidarInputs;
 
 /**
  *
@@ -24,9 +25,26 @@ public class VtnNuevoTrabajador extends javax.swing.JFrame {
      * Creates new form VtnNuevoTrabajador
      */
     variableStatica ventana = new variableStatica();
+    
+    //Instanciamos el controlado validar inputs
+    
+    ControladorValidarInputs validarInputs = new ControladorValidarInputs();
+    
+    
+    
+    
     public VtnNuevoTrabajador() {
         initComponents();
         setLocationRelativeTo(this);
+        //Validamos los inputs
+        validarInputs.validarsololetras(txtNom);
+        validarInputs.validarsololetras(txtApPa);
+        validarInputs.validarsololetras(txtApMa);
+        validarInputs.validarsolonumeros(txtTelf);
+        validarInputs.limitarcaraceteres(txtTelf, 9);
+        validarInputs.validarsolonumeros(txtDni);
+        validarInputs.limitarcaraceteres(txtDni, 8);
+        //Fin de validación
         addWindowListener( new java.awt.event.WindowAdapter() {
             @Override
             public void windowClosing(java.awt.event.WindowEvent e ) 

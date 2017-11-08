@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package controldetiempos;
+package Principal;
 
 import Controlador.ControladorUICT;
 import util.Conexion;

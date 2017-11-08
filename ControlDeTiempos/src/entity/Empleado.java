@@ -13,40 +13,40 @@ import java.io.FileInputStream;
  * @author diego
  */
 public class Empleado {
-    String idEmpleado;
-    String nombres;
-    String apellidoPaterno;
-    String apellidoMaterno;
-    String sexo;
-    String DNI;
-    String fechaNacimiento;
-    String DistritoResidencia;
-    String direccion;
-    String telefono;
-    String correoElectronico;
-    String asignacionFamiliar;
-    int idArea;
-    int idPuesto;
-    int idRetencion;
-    FileInputStream fotoEmpleado;
+  private String idEmpleado;
+  private String nombres;
+  private String apellidoPaterno;
+  private String apellidoMaterno;
+  private String sexo;
+  private String DNI;
+  private String fechaNacimiento;
+  private String DistritoResidencia;
+  private String direccion;
+  private String telefono;
+  private String correoElectronico;
+  private String asignacionFamiliar;
+  private int idArea;
+  private int idPuesto;
+  private int idRetencion;
+  private FileInputStream fotoEmpleado;
     
     public Empleado(){
-        idEmpleado="";
-        nombres="";
-        apellidoPaterno="";
-        apellidoMaterno="";
-        sexo="";
-        DNI="";
-        fechaNacimiento="";
-        DistritoResidencia="";
-        direccion="";
-        telefono="";
-        correoElectronico="";
-        asignacionFamiliar="";
-        idArea=0;
-        idPuesto=0;
-        idRetencion=0;
-        fotoEmpleado=null;
+       this.idEmpleado="";
+       this.nombres="";
+       this.apellidoPaterno="";
+       this.apellidoMaterno="";
+       this.sexo="";
+       this.DNI="";
+       this.fechaNacimiento="";
+       this.DistritoResidencia="";
+       this.direccion="";
+       this.telefono="";
+       this.correoElectronico="";
+       this.asignacionFamiliar="";
+       this.idArea=0;
+       this.idPuesto=0;
+       this.idRetencion=0;
+       this.fotoEmpleado=null;
     }
 
     public FileInputStream getFotoEmpleado() {
