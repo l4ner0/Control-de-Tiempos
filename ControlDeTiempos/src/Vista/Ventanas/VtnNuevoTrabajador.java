@@ -12,6 +12,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import Controlador.ControladorValidarInputs;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -143,6 +144,11 @@ public class VtnNuevoTrabajador extends javax.swing.JFrame {
             }
         });
 
+        txtEmail.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtEmailFocusLost(evt);
+            }
+        });
         txtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEmailActionPerformed(evt);
@@ -432,10 +438,6 @@ public class VtnNuevoTrabajador extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtEmailActionPerformed
-
     private void txtApMaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApMaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtApMaActionPerformed
@@ -479,6 +481,16 @@ public class VtnNuevoTrabajador extends javax.swing.JFrame {
     private void txtRutaFotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRutaFotoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtRutaFotoActionPerformed
+
+    private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmailActionPerformed
+
+    private void txtEmailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmailFocusLost
+if(!validarInputs.validaremail(txtEmail)) JOptionPane.showMessageDialog(this, "Email incorrecto","Error de formato Email",JOptionPane.ERROR_MESSAGE);
+txtEmail.selectAll();
+txtEmail.requestFocus();
+    }//GEN-LAST:event_txtEmailFocusLost
 
     /**
      * @param args the command line arguments
