@@ -51,10 +51,7 @@ public class IUControlTiempos extends javax.swing.JFrame {
         pnlAsistencia = new javax.swing.JPanel();
         lblAsistencia = new javax.swing.JLabel();
         btnReporte = new rsbuttom.RSButtonMetro();
-        pnlHorarios = new javax.swing.JPanel();
-        lblHorarios = new javax.swing.JLabel();
-        btnNuevoHorario = new rsbuttom.RSButtonMetro();
-        btnAsignar = new rsbuttom.RSButtonMetro();
+        btnSalir = new rsbuttom.RSButtonMetro();
         pnlCentral = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -270,71 +267,21 @@ public class IUControlTiempos extends javax.swing.JFrame {
             }
         });
 
-        pnlHorarios.setBackground(new java.awt.Color(214, 217, 223));
-        pnlHorarios.setPreferredSize(new java.awt.Dimension(154, 72));
-
-        lblHorarios.setBackground(new java.awt.Color(153, 153, 153));
-        lblHorarios.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblHorarios.setText("HORARIOS");
-
-        javax.swing.GroupLayout pnlHorariosLayout = new javax.swing.GroupLayout(pnlHorarios);
-        pnlHorarios.setLayout(pnlHorariosLayout);
-        pnlHorariosLayout.setHorizontalGroup(
-            pnlHorariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlHorariosLayout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(lblHorarios)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        pnlHorariosLayout.setVerticalGroup(
-            pnlHorariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlHorariosLayout.createSequentialGroup()
-                .addContainerGap(23, Short.MAX_VALUE)
-                .addComponent(lblHorarios, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
-        );
-
-        btnNuevoHorario.setBackground(new java.awt.Color(214, 217, 223));
-        btnNuevoHorario.setForeground(new java.awt.Color(126, 126, 131));
-        btnNuevoHorario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/img/NuevoHorario.png"))); // NOI18N
-        btnNuevoHorario.setText("Nuevo");
-        btnNuevoHorario.setColorHover(new java.awt.Color(204, 204, 204));
-        btnNuevoHorario.setColorNormal(new java.awt.Color(214, 217, 223));
-        btnNuevoHorario.setColorPressed(new java.awt.Color(214, 217, 223));
-        btnNuevoHorario.setColorTextHover(new java.awt.Color(126, 126, 131));
-        btnNuevoHorario.setColorTextNormal(new java.awt.Color(126, 126, 131));
-        btnNuevoHorario.setColorTextPressed(new java.awt.Color(126, 126, 131));
-        btnNuevoHorario.setIconTextGap(25);
-        btnNuevoHorario.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnNuevoHorarioMousePressed(evt);
-            }
-        });
-        btnNuevoHorario.addActionListener(new java.awt.event.ActionListener() {
+        btnSalir.setBackground(new java.awt.Color(214, 217, 223));
+        btnSalir.setForeground(new java.awt.Color(126, 126, 131));
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Salir.png"))); // NOI18N
+        btnSalir.setText("Salir");
+        btnSalir.setColorHover(new java.awt.Color(204, 204, 204));
+        btnSalir.setColorNormal(new java.awt.Color(214, 217, 223));
+        btnSalir.setColorPressed(new java.awt.Color(214, 217, 223));
+        btnSalir.setColorTextHover(new java.awt.Color(126, 126, 131));
+        btnSalir.setColorTextNormal(new java.awt.Color(126, 126, 131));
+        btnSalir.setColorTextPressed(new java.awt.Color(126, 126, 131));
+        btnSalir.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnSalir.setIconTextGap(15);
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNuevoHorarioActionPerformed(evt);
-            }
-        });
-
-        btnAsignar.setBackground(new java.awt.Color(214, 217, 223));
-        btnAsignar.setForeground(new java.awt.Color(126, 126, 131));
-        btnAsignar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Asignar.png"))); // NOI18N
-        btnAsignar.setText("Asignar");
-        btnAsignar.setColorHover(new java.awt.Color(204, 204, 204));
-        btnAsignar.setColorNormal(new java.awt.Color(214, 217, 223));
-        btnAsignar.setColorPressed(new java.awt.Color(214, 217, 223));
-        btnAsignar.setColorTextHover(new java.awt.Color(126, 126, 131));
-        btnAsignar.setColorTextNormal(new java.awt.Color(126, 126, 131));
-        btnAsignar.setColorTextPressed(new java.awt.Color(126, 126, 131));
-        btnAsignar.setIconTextGap(25);
-        btnAsignar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnAsignarMousePressed(evt);
-            }
-        });
-        btnAsignar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAsignarActionPerformed(evt);
+                btnSalirActionPerformed(evt);
             }
         });
 
@@ -346,39 +293,34 @@ public class IUControlTiempos extends javax.swing.JFrame {
             .addComponent(btnControl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnListar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(pnlAsistencia, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
-            .addComponent(btnReporte, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(pnlHorarios, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
-            .addGroup(panelMenuLayout.createSequentialGroup()
-                .addComponent(btnNuevoTrabajador, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addComponent(btnNuevoHorario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnAsignar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnInicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnReporte, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(panelMenuLayout.createSequentialGroup()
+                .addGroup(panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnNuevoTrabajador, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         panelMenuLayout.setVerticalGroup(
             panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelMenuLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(36, 36, 36)
                 .addComponent(btnInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7)
+                .addGap(28, 28, 28)
                 .addComponent(pnlTrabajador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnNuevoTrabajador, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnListar, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pnlHorarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnNuevoHorario, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnAsignar, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(35, 35, 35)
                 .addComponent(pnlAsistencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnControl, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnReporte, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addGap(53, 53, 53)
+                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(71, Short.MAX_VALUE))
         );
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -454,14 +396,6 @@ public class IUControlTiempos extends javax.swing.JFrame {
             this.btnNuevoTrabajador.setColorHover(new Color(204,204,204));
             this.btnNuevoTrabajador.setColorPressed(new Color(214,217,223));
 
-            this.btnNuevoHorario.setColorNormal(new Color(214,217,223));
-            this.btnNuevoHorario.setColorHover(new Color(204,204,204));
-            this.btnNuevoHorario.setColorPressed(new Color(214,217,223));
-            
-            this.btnAsignar.setColorNormal(new Color(214,217,223));
-            this.btnAsignar.setColorHover(new Color(204,204,204));
-            this.btnAsignar.setColorPressed(new Color(214,217,223));
-
             this.btnControl.setColorNormal(new Color(214,217,223));
             this.btnControl.setColorHover(new Color(204,204,204));
             this.btnControl.setColorPressed(new Color(214,217,223));
@@ -476,8 +410,6 @@ public class IUControlTiempos extends javax.swing.JFrame {
         this.btnInicio.setSelected(false);
         this.btnNuevoTrabajador.setSelected(false);
         this.btnListar.setSelected(true);
-        this.btnNuevoHorario.setSelected(false);
-        this.btnAsignar.setSelected(false);
         this.btnControl.setSelected(false); 
         this.btnReporte.setSelected(false);
         
@@ -505,14 +437,6 @@ public class IUControlTiempos extends javax.swing.JFrame {
             this.btnListar.setColorHover(new Color(204,204,204));
             this.btnListar.setColorPressed(new Color(214,217,223));
 
-            this.btnNuevoHorario.setColorNormal(new Color(214,217,223));
-            this.btnNuevoHorario.setColorHover(new Color(204,204,204));
-            this.btnNuevoHorario.setColorPressed(new Color(214,217,223));
-            
-            this.btnAsignar.setColorNormal(new Color(214,217,223));
-            this.btnAsignar.setColorHover(new Color(204,204,204));
-            this.btnAsignar.setColorPressed(new Color(214,217,223));
-
             this.btnControl.setColorNormal(new Color(214,217,223));
             this.btnControl.setColorHover(new Color(204,204,204));
             this.btnControl.setColorPressed(new Color(214,217,223));
@@ -527,8 +451,6 @@ public class IUControlTiempos extends javax.swing.JFrame {
         this.btnInicio.setSelected(false);
         this.btnNuevoTrabajador.setSelected(true);
         this.btnListar.setSelected(false);
-        this.btnNuevoHorario.setSelected(false);
-        this.btnAsignar.setSelected(false);
         this.btnControl.setSelected(false); 
         this.btnReporte.setSelected(false);
     }//GEN-LAST:event_btnNuevoTrabajadorMousePressed
@@ -556,14 +478,6 @@ public class IUControlTiempos extends javax.swing.JFrame {
             this.btnListar.setColorNormal(new Color(214,217,223));
             this.btnListar.setColorHover(new Color(204,204,204));
             this.btnListar.setColorPressed(new Color(214,217,223));
-            
-            this.btnNuevoHorario.setColorNormal(new Color(214,217,223));
-            this.btnNuevoHorario.setColorHover(new Color(204,204,204));
-            this.btnNuevoHorario.setColorPressed(new Color(214,217,223));
-
-            this.btnAsignar.setColorNormal(new Color(214,217,223));
-            this.btnAsignar.setColorHover(new Color(204,204,204));
-            this.btnAsignar.setColorPressed(new Color(214,217,223));
 
             this.btnReporte.setColorNormal(new Color(214,217,223));
             this.btnReporte.setColorHover(new Color(204,204,204));
@@ -575,8 +489,6 @@ public class IUControlTiempos extends javax.swing.JFrame {
         this.btnInicio.setSelected(false);
         this.btnNuevoTrabajador.setSelected(false);
         this.btnListar.setSelected(false);
-        this.btnNuevoHorario.setSelected(false);
-        this.btnAsignar.setSelected(false);
         this.btnControl.setSelected(true); 
         this.btnReporte.setSelected(false);
 
@@ -602,14 +514,6 @@ public class IUControlTiempos extends javax.swing.JFrame {
             this.btnListar.setColorHover(new Color(204,204,204));
             this.btnListar.setColorPressed(new Color(214,217,223));
 
-            this.btnNuevoHorario.setColorNormal(new Color(214,217,223));
-            this.btnNuevoHorario.setColorHover(new Color(204,204,204));
-            this.btnNuevoHorario.setColorPressed(new Color(214,217,223));
-            
-            this.btnAsignar.setColorNormal(new Color(214,217,223));
-            this.btnAsignar.setColorHover(new Color(204,204,204));
-            this.btnAsignar.setColorPressed(new Color(214,217,223));
-
             this.btnControl.setColorNormal(new Color(214,217,223));
             this.btnControl.setColorHover(new Color(204,204,204));
             this.btnControl.setColorPressed(new Color(214,217,223));
@@ -624,8 +528,6 @@ public class IUControlTiempos extends javax.swing.JFrame {
         this.btnInicio.setSelected(true);
         this.btnNuevoTrabajador.setSelected(false);
         this.btnListar.setSelected(false);
-        this.btnNuevoHorario.setSelected(false);
-        this.btnAsignar.setSelected(false);
         this.btnControl.setSelected(false); 
         this.btnReporte.setSelected(false);
     }//GEN-LAST:event_btnInicioMousePressed
@@ -633,82 +535,6 @@ public class IUControlTiempos extends javax.swing.JFrame {
     private void btnInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInicioMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_btnInicioMouseClicked
-
-    private void btnNuevoHorarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoHorarioActionPerformed
-        new CambiaPanel(pnlCentral,new pnlNuevoHorario());
-        if(this.btnNuevoHorario.isSelected())
-        {
-            this.btnNuevoHorario.setColorNormal(new Color(214,217,223));
-            this.btnNuevoHorario.setColorHover(new Color(204,204,204));
-            this.btnNuevoHorario.setColorPressed(new Color(214,217,223));
-
-            this.btnNuevoHorario.setColorNormal(new Color(204,204,204));
-            this.btnNuevoHorario.setColorHover(new Color(204,204,204));
-            this.btnNuevoHorario.setColorPressed(new Color(204,204,204));
-
-            this.btnInicio.setColorNormal(new Color(214,217,223));
-            this.btnInicio.setColorHover(new Color(204,204,204));
-            this.btnInicio.setColorPressed(new Color(214,217,223));
-
-            this.btnNuevoTrabajador.setColorNormal(new Color(214,217,223));
-            this.btnNuevoTrabajador.setColorHover(new Color(204,204,204));
-            this.btnNuevoTrabajador.setColorPressed(new Color(214,217,223));
-
-            this.btnListar.setColorNormal(new Color(214,217,223));
-            this.btnListar.setColorHover(new Color(204,204,204));
-            this.btnListar.setColorPressed(new Color(214,217,223));
-            
-            this.btnAsignar.setColorNormal(new Color(214,217,223));
-            this.btnAsignar.setColorHover(new Color(204,204,204));
-            this.btnAsignar.setColorPressed(new Color(214,217,223));
-
-            this.btnControl.setColorNormal(new Color(214,217,223));
-            this.btnControl.setColorHover(new Color(204,204,204));
-            this.btnControl.setColorPressed(new Color(214,217,223));
-
-            this.btnReporte.setColorNormal(new Color(214,217,223));
-            this.btnReporte.setColorHover(new Color(204,204,204));
-            this.btnReporte.setColorPressed(new Color(214,217,223));
-        }
-    }//GEN-LAST:event_btnNuevoHorarioActionPerformed
-
-    private void btnAsignarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAsignarActionPerformed
-        new CambiaPanel(pnlCentral,new pnlAsignar());
-        if(this.btnAsignar.isSelected())
-        {
-            this.btnAsignar.setColorNormal(new Color(214,217,223));
-            this.btnAsignar.setColorHover(new Color(204,204,204));
-            this.btnAsignar.setColorPressed(new Color(214,217,223));
-
-            this.btnAsignar.setColorNormal(new Color(204,204,204));
-            this.btnAsignar.setColorHover(new Color(204,204,204));
-            this.btnAsignar.setColorPressed(new Color(204,204,204));
-
-            this.btnInicio.setColorNormal(new Color(214,217,223));
-            this.btnInicio.setColorHover(new Color(204,204,204));
-            this.btnInicio.setColorPressed(new Color(214,217,223));
-
-            this.btnNuevoTrabajador.setColorNormal(new Color(214,217,223));
-            this.btnNuevoTrabajador.setColorHover(new Color(204,204,204));
-            this.btnNuevoTrabajador.setColorPressed(new Color(214,217,223));
-
-            this.btnListar.setColorNormal(new Color(214,217,223));
-            this.btnListar.setColorHover(new Color(204,204,204));
-            this.btnListar.setColorPressed(new Color(214,217,223));
-            
-            this.btnNuevoHorario.setColorNormal(new Color(214,217,223));
-            this.btnNuevoHorario.setColorHover(new Color(204,204,204));
-            this.btnNuevoHorario.setColorPressed(new Color(214,217,223));
-
-            this.btnControl.setColorNormal(new Color(214,217,223));
-            this.btnControl.setColorHover(new Color(204,204,204));
-            this.btnControl.setColorPressed(new Color(214,217,223));
-
-            this.btnReporte.setColorNormal(new Color(214,217,223));
-            this.btnReporte.setColorHover(new Color(204,204,204));
-            this.btnReporte.setColorPressed(new Color(214,217,223));
-        }
-    }//GEN-LAST:event_btnAsignarActionPerformed
 
     private void btnReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReporteActionPerformed
         new CambiaPanel(pnlCentral,new pnlReporte());
@@ -733,14 +559,6 @@ public class IUControlTiempos extends javax.swing.JFrame {
             this.btnListar.setColorNormal(new Color(214,217,223));
             this.btnListar.setColorHover(new Color(204,204,204));
             this.btnListar.setColorPressed(new Color(214,217,223));
-            
-            this.btnNuevoHorario.setColorNormal(new Color(214,217,223));
-            this.btnNuevoHorario.setColorHover(new Color(204,204,204));
-            this.btnNuevoHorario.setColorPressed(new Color(214,217,223));
-
-            this.btnAsignar.setColorNormal(new Color(214,217,223));
-            this.btnAsignar.setColorHover(new Color(204,204,204));
-            this.btnAsignar.setColorPressed(new Color(214,217,223));
 
             this.btnControl.setColorNormal(new Color(214,217,223));
             this.btnControl.setColorHover(new Color(204,204,204));
@@ -748,35 +566,17 @@ public class IUControlTiempos extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnReporteActionPerformed
 
-    private void btnNuevoHorarioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNuevoHorarioMousePressed
-        this.btnInicio.setSelected(false);
-        this.btnNuevoTrabajador.setSelected(false);
-        this.btnListar.setSelected(false);
-        this.btnNuevoHorario.setSelected(true);
-        this.btnAsignar.setSelected(false);
-        this.btnControl.setSelected(false); 
-        this.btnReporte.setSelected(false);
-    }//GEN-LAST:event_btnNuevoHorarioMousePressed
-
-    private void btnAsignarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAsignarMousePressed
-        this.btnInicio.setSelected(false);
-        this.btnNuevoTrabajador.setSelected(false);
-        this.btnListar.setSelected(false);
-        this.btnNuevoHorario.setSelected(false);
-        this.btnAsignar.setSelected(true);
-        this.btnControl.setSelected(false); 
-        this.btnReporte.setSelected(false);
-    }//GEN-LAST:event_btnAsignarMousePressed
-
     private void btnReporteMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnReporteMousePressed
         this.btnInicio.setSelected(false);
         this.btnNuevoTrabajador.setSelected(false);
         this.btnListar.setSelected(false);
-        this.btnNuevoHorario.setSelected(false);
-        this.btnAsignar.setSelected(false);
         this.btnControl.setSelected(false); 
         this.btnReporte.setSelected(true);
     }//GEN-LAST:event_btnReporteMousePressed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        dispose();
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -784,22 +584,19 @@ public class IUControlTiempos extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public rsbuttom.RSButtonMetro btnAsignar;
     public rsbuttom.RSButtonMetro btnControl;
     public rsbuttom.RSButtonMetro btnInicio;
     public rsbuttom.RSButtonMetro btnListar;
     private javax.swing.JButton btnMenu;
-    public rsbuttom.RSButtonMetro btnNuevoHorario;
     public rsbuttom.RSButtonMetro btnNuevoTrabajador;
     public rsbuttom.RSButtonMetro btnReporte;
+    private rsbuttom.RSButtonMetro btnSalir;
     private javax.swing.JLabel lblAsistencia;
-    private javax.swing.JLabel lblHorarios;
     private javax.swing.JLabel lblTrabajador;
     private javax.swing.JPanel panelMenu;
     private javax.swing.JPanel pnlAsistencia;
     private javax.swing.JPanel pnlCabeza;
     private javax.swing.JPanel pnlCentral;
-    private javax.swing.JPanel pnlHorarios;
     private javax.swing.JPanel pnlPrincipal;
     private javax.swing.JPanel pnlTrabajador;
     // End of variables declaration//GEN-END:variables

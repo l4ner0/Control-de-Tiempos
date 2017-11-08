@@ -34,26 +34,19 @@ public class ControladorNT implements ActionListener {
         this.vtnNuevoTrabajador=vtnNuevoTrabajador;
         this.empleadoDAO = empleadoDAO;
         this.vtnNuevoTrabajador.btnGrabar.addActionListener(this);
-        this.vtnNuevoTrabajador.btnIdentificacion.addActionListener(this);
     }
     
     public void actionPerformed(ActionEvent e){
         
-        if(e.getSource()==vtnNuevoTrabajador.btnIdentificacion){
-            JOptionPane.showMessageDialog(null,"Le distes a Identificacion :-)");
-            IdentifAcceso acceso= new IdentifAcceso();
-            ControladorIdentifAcceso controladorAcceso=
-                    new ControladorIdentifAcceso(vtnNuevoTrabajador,acceso);
-            acceso.setVisible(true);
-        }
+        
         if(e.getSource()==vtnNuevoTrabajador.btnGrabar)
         {
             if(vtnNuevoTrabajador.rbtnHombre.isSelected())
             {
-                  opcionSexo="Hombre";
+                  opcionSexo="Masculino";
             }else
             {
-                  opcionSexo="Mujer";
+                  opcionSexo="Femenino";
             }
             String idEmpleado=generarCodigo();
             String nombres=vtnNuevoTrabajador.txtNom.getText();
@@ -71,18 +64,11 @@ public class ControladorNT implements ActionListener {
             int idPuesto=Integer.parseInt((String) vtnNuevoTrabajador.cbPuesto.getSelectedItem());
             int idRetencion=Integer.parseInt((String) vtnNuevoTrabajador.cbReten.getSelectedItem());
             String rutaFoto=vtnNuevoTrabajador.txtRutaFoto.getText();
-            FileInputStream fotoEmpleado=null;
-            File archivo = new File(rutaFoto);
-            try {
-                fotoEmpleado= new FileInputStream(archivo);
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(ControladorNT.class.getName()).log(Level.SEVERE, null, ex);
-            }
-
-            boolean registro=empleadoDAO.InsertarEmpleado(idEmpleado, nombres, 
+    
+            boolean registro=empleadoDAO.InsertarEmpleado(idEmpleado,rutaFoto, nombres, 
                     apellidoPaterno, apellidoMaterno, sexo, DNI, fechaNacimiento, 
                     distrito, direccion, telefono, correoElectronico, 
-                    asignacionFamiliar, idArea, idPuesto, idRetencion,fotoEmpleado,archivo);
+                    asignacionFamiliar, idArea, idPuesto, idRetencion);
             if(registro)
             {
                 JOptionPane.showMessageDialog(null,"Registro exitoso!! :)");

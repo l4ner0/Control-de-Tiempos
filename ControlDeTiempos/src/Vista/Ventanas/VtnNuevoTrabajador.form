@@ -559,10 +559,7 @@
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="btnIdentificacion" min="-2" pref="118" max="-2" attributes="0"/>
-                                          <Component id="btnTomarFoto" min="-2" pref="118" max="-2" attributes="0"/>
-                                      </Group>
+                                      <Component id="btnTomarFoto" min="-2" pref="118" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="lblFoto" pref="164" max="32767" attributes="0"/>
                                   <Component id="txtRutaFoto" alignment="0" pref="164" max="32767" attributes="0"/>
@@ -584,9 +581,7 @@
                       <Component id="txtRutaFoto" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="btnTomarFoto" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnIdentificacion" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="45" max="32767" attributes="0"/>
+                      <EmptySpace pref="86" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -622,14 +617,6 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBuscarFotoActionPerformed"/>
               </Events>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JButton" name="btnIdentificacion">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Identificaci&#xf3;n"/>
-              </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>

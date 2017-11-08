@@ -28,8 +28,6 @@ public class ControladorUICT implements ActionListener{
         this.iuControlTiempos.btnInicio.addActionListener(this);
         this.iuControlTiempos.btnNuevoTrabajador.addActionListener(this);
         this.iuControlTiempos.btnListar.addActionListener(this);
-        this.iuControlTiempos.btnNuevoHorario.addActionListener(this);
-        this.iuControlTiempos.btnAsignar.addActionListener(this);
         this.iuControlTiempos.btnControl.addActionListener(this);
         this.iuControlTiempos.btnReporte.addActionListener(this);
         
@@ -58,16 +56,6 @@ public class ControladorUICT implements ActionListener{
         if(e.getSource()==iuControlTiempos.btnListar)
         {
             JOptionPane.showMessageDialog(null,"Le distes a Listar :-)");
-        }
-        
-        if(e.getSource()==iuControlTiempos.btnNuevoHorario)
-        {
-            JOptionPane.showMessageDialog(null,"Le distes a Nuevo horario :-)");
-        }
-        
-        if(e.getSource()==iuControlTiempos.btnAsignar)
-        {
-            JOptionPane.showMessageDialog(null,"Le distes a Asignar horario :-)");
         }
         
         if(e.getSource()==iuControlTiempos.btnControl)

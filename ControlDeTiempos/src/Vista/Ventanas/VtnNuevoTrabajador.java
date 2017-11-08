@@ -108,7 +108,6 @@ public class VtnNuevoTrabajador extends javax.swing.JFrame {
         lblFoto = new javax.swing.JLabel();
         btnTomarFoto = new javax.swing.JButton();
         btnBuscarFoto = new javax.swing.JButton();
-        btnIdentificacion = new javax.swing.JButton();
         txtRutaFoto = new javax.swing.JTextField();
         lblTitulo = new javax.swing.JLabel();
 
@@ -331,8 +330,6 @@ public class VtnNuevoTrabajador extends javax.swing.JFrame {
             }
         });
 
-        btnIdentificacion.setText("Identificación");
-
         txtRutaFoto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtRutaFotoActionPerformed(evt);
@@ -353,9 +350,7 @@ public class VtnNuevoTrabajador extends javax.swing.JFrame {
                         .addGroup(pnlFotoTrabajadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(pnlFotoTrabajadorLayout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addGroup(pnlFotoTrabajadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnIdentificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnTomarFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(btnTomarFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(lblFoto, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
                             .addComponent(txtRutaFoto, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE))))
                 .addContainerGap(26, Short.MAX_VALUE))
@@ -371,9 +366,7 @@ public class VtnNuevoTrabajador extends javax.swing.JFrame {
                 .addComponent(txtRutaFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnTomarFoto)
-                .addGap(18, 18, 18)
-                .addComponent(btnIdentificacion)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(86, Short.MAX_VALUE))
         );
 
         lblTitulo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -500,7 +493,6 @@ txtEmail.requestFocus();}
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnBuscarFoto;
     public javax.swing.JButton btnGrabar;
-    public javax.swing.JButton btnIdentificacion;
     public javax.swing.JButton btnSalir;
     public javax.swing.JButton btnTomarFoto;
     public javax.swing.JComboBox cbArea;
