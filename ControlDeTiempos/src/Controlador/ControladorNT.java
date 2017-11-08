@@ -153,17 +153,35 @@ public class ControladorNT implements ActionListener {
             int idPuesto=Integer.parseInt((String) vtnNuevoTrabajador.cbPuesto.getSelectedItem());
             int idRetencion=Integer.parseInt((String) vtnNuevoTrabajador.cbReten.getSelectedItem());
             String rutaFoto=vtnNuevoTrabajador.txtRutaFoto.getText();
-   
+            
             boolean registro=empleadoDAO.InsertarEmpleado(idEmpleado,rutaFoto, nombres, 
                     apellidoPaterno, apellidoMaterno, sexo, DNI, fechaNacimiento, 
                     distrito, direccion, telefono, correoElectronico, 
                     asignacionFamiliar, idArea, idPuesto, idRetencion);
-            if(registro=true)
+            
+            if(registro)
             {
-                JOptionPane.showMessageDialog(null,"Registro exitoso!! :)");
+                JOptionPane.showMessageDialog(null,"Registro exitoso!! :-)");
+                
+                vtnNuevoTrabajador.txtApPa.setText("");
+                vtnNuevoTrabajador.txtApMa.setText("");
+                vtnNuevoTrabajador.txtNom.setText("");
+                vtnNuevoTrabajador.rbtnHombre.setSelected(false);
+                vtnNuevoTrabajador.rbtnMujer.setSelected(false);
+                vtnNuevoTrabajador.txtDni.setText("");
+                vtnNuevoTrabajador.txtFechNac.setText("");
+                vtnNuevoTrabajador.cbDsitritoRes.setSelectedItem("Seleccione un opción");
+                vtnNuevoTrabajador.txtDirec.setText("");
+                vtnNuevoTrabajador.txtTelf.setText("");
+                vtnNuevoTrabajador.txtEmail.setText("");
+                vtnNuevoTrabajador.cbAsig.setSelectedItem("Seleccione una opción");
+                vtnNuevoTrabajador.cbArea.setSelectedItem("Seleccione una opción");
+                vtnNuevoTrabajador.cbPuesto.setSelectedItem("Seleccione una opción");
+                vtnNuevoTrabajador.cbReten.setSelectedItem("Seleccione una opción");
+                vtnNuevoTrabajador.txtRutaFoto.setText("");
             }else
             {
-                JOptionPane.showMessageDialog(null,"Error al registrar!! :(");
+                JOptionPane.showMessageDialog(null,"Error al registrar!! :-(");
             }
         }
         
