@@ -1,5 +1,5 @@
 
-package validaciones;
+package Controlador;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
