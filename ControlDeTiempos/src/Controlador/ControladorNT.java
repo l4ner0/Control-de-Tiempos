@@ -26,6 +26,7 @@ public class ControladorNT implements ActionListener {
     
     VtnNuevoTrabajador vtnNuevoTrabajador = new VtnNuevoTrabajador();
     EmpleadoDAO empleadoDAO = new EmpleadoDAO();
+    ControladorValidarInputs validarVacios= new ControladorValidarInputs();
     String opcionSexo;
     
     public ControladorNT(VtnNuevoTrabajador vtnNuevoTrabajador, 
@@ -41,13 +42,101 @@ public class ControladorNT implements ActionListener {
         
         if(e.getSource()==vtnNuevoTrabajador.btnGrabar)
         {
+            if(vtnNuevoTrabajador.txtApPa.getText().equals(""))
+            {
+                JOptionPane.showMessageDialog(null,"El campo Apellido Paterno está vacío");
+                return;
+            }
+            
+            if(vtnNuevoTrabajador.txtApMa.getText().equals(""))
+            {
+                JOptionPane.showMessageDialog(null,"El campo Apellido Materno está vacío");
+                return;
+            }
+            
+            if(vtnNuevoTrabajador.txtNom.getText().equals(""))
+            {
+                JOptionPane.showMessageDialog(null,"El campo Nombres está vacío");
+                return;
+            }
+            
             if(vtnNuevoTrabajador.rbtnHombre.isSelected())
             {
                   opcionSexo="Masculino";
-            }else
+            }else if(vtnNuevoTrabajador.rbtnMujer.isSelected())
             {
                   opcionSexo="Femenino";
+            }else{
+                JOptionPane.showMessageDialog(null,"El campo sexo está vacío");
+                return;
             }
+            
+            if(vtnNuevoTrabajador.txtDni.getText().equals(""))
+            {
+                JOptionPane.showMessageDialog(null,"El campo DNI está vacío");
+                return;
+            }
+            
+            if(vtnNuevoTrabajador.txtFechNac.getText().equals(""))
+            {
+                JOptionPane.showMessageDialog(null,"El campo Fecha de Nacimiento está vacío");
+                return;
+            }
+            
+            if(vtnNuevoTrabajador.cbDsitritoRes.getSelectedItem().equals("Seleccione un opción"))
+            {
+                JOptionPane.showMessageDialog(null,"Seleccione un Distrito");
+                return;
+            }
+            
+            if(vtnNuevoTrabajador.txtDirec.getText().equals(""))
+            {
+                JOptionPane.showMessageDialog(null,"El campo Dirección está vacío");
+                return;
+            }
+            
+            if(vtnNuevoTrabajador.txtTelf.getText().equals(""))
+            {
+                JOptionPane.showMessageDialog(null,"El campo Teléfono está vacío");
+                return;
+            }
+            
+            if(vtnNuevoTrabajador.txtEmail.getText().equals(""))
+            {
+                JOptionPane.showMessageDialog(null,"El campo E-mail está vacío");
+                return;
+            }
+            
+            if(vtnNuevoTrabajador.cbAsig.getSelectedItem().equals("Seleccione una opción"))
+            {
+                JOptionPane.showMessageDialog(null,"Responda a la asignación familiar");
+                return;
+            }
+            
+            if(vtnNuevoTrabajador.cbArea.getSelectedItem().equals("Seleccione una opción"))
+            {
+                JOptionPane.showMessageDialog(null,"Seleccione un Area");
+                return;
+            }
+            
+            if(vtnNuevoTrabajador.cbPuesto.getSelectedItem().equals("Seleccione una opción"))
+            {
+                JOptionPane.showMessageDialog(null,"Seleccione un Puesto");
+                return;
+            }
+            
+            if(vtnNuevoTrabajador.cbReten.getSelectedItem().equals("Seleccione una opción"))
+            {
+                JOptionPane.showMessageDialog(null,"Seleccione un tipo de retención");
+                return;
+            }
+            
+            if(vtnNuevoTrabajador.txtRutaFoto.getText().equals(""))
+            {
+                JOptionPane.showMessageDialog(null,"Elija una foto a subir");
+                return;
+            }
+
             String idEmpleado=generarCodigo();
             String nombres=vtnNuevoTrabajador.txtNom.getText();
             String apellidoPaterno=vtnNuevoTrabajador.txtApPa.getText();
@@ -64,12 +153,12 @@ public class ControladorNT implements ActionListener {
             int idPuesto=Integer.parseInt((String) vtnNuevoTrabajador.cbPuesto.getSelectedItem());
             int idRetencion=Integer.parseInt((String) vtnNuevoTrabajador.cbReten.getSelectedItem());
             String rutaFoto=vtnNuevoTrabajador.txtRutaFoto.getText();
-    
+   
             boolean registro=empleadoDAO.InsertarEmpleado(idEmpleado,rutaFoto, nombres, 
                     apellidoPaterno, apellidoMaterno, sexo, DNI, fechaNacimiento, 
                     distrito, direccion, telefono, correoElectronico, 
                     asignacionFamiliar, idArea, idPuesto, idRetencion);
-            if(registro)
+            if(registro=true)
             {
                 JOptionPane.showMessageDialog(null,"Registro exitoso!! :)");
             }else

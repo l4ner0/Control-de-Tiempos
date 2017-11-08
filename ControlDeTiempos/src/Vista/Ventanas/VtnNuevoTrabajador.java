@@ -154,9 +154,9 @@ public class VtnNuevoTrabajador extends javax.swing.JFrame {
             }
         });
 
-        rbtnHombre.setText("Hombre");
+        rbtnHombre.setText("Masculino");
 
-        rbtnMujer.setText("Mujer");
+        rbtnMujer.setText("Femenino");
 
         cbDsitritoRes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione un opción", "Cercado de Lima", "Ate", "Barranci", "Breña", "Comas", "Chorrillos", "El Agustino", "Jesús MaríaLa Molina", "La Victoria", "Lince", "Magdalena del Mar", "Miraflores", "Pueblo Libre", "Puente Piedra", "Rimac", "San Isidro", "Independencia", "San Juan de Miraflores", "San Luis", "San Martin de Porres", "San Miguel", "Santiago de Surco", "Surquillo", "Villa María del Triunfo", "San Juan de Lurigancho", "Santa Rosa", "Los Olivos", "San Borja", "Villa El Savador", "Santa Anita" }));
 
@@ -197,7 +197,7 @@ public class VtnNuevoTrabajador extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(pnlDatosPersonalesLayout.createSequentialGroup()
                         .addGroup(pnlDatosPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtFechNac, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
+                            .addComponent(txtFechNac)
                             .addComponent(txtApMa, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(pnlDatosPersonalesLayout.createSequentialGroup()
                                 .addComponent(rbtnHombre)
