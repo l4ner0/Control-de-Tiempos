@@ -154,6 +154,7 @@ public class ControladorNT implements ActionListener {
             int idRetencion=Integer.parseInt((String) vtnNuevoTrabajador.cbReten.getSelectedItem());
             String rutaFoto=vtnNuevoTrabajador.txtRutaFoto.getText();
             
+            
             boolean registro=empleadoDAO.InsertarEmpleado(idEmpleado,rutaFoto, nombres, 
                     apellidoPaterno, apellidoMaterno, sexo, DNI, fechaNacimiento, 
                     distrito, direccion, telefono, correoElectronico, 
@@ -179,6 +180,8 @@ public class ControladorNT implements ActionListener {
                 vtnNuevoTrabajador.cbPuesto.setSelectedItem("Seleccione una opción");
                 vtnNuevoTrabajador.cbReten.setSelectedItem("Seleccione una opción");
                 vtnNuevoTrabajador.txtRutaFoto.setText("");
+                vtnNuevoTrabajador.lblFoto.setIcon(null);
+                
             }else
             {
                 JOptionPane.showMessageDialog(null,"Error al registrar!! :-(");
@@ -190,9 +193,9 @@ public class ControladorNT implements ActionListener {
     //utilizar metodo hasta crear areaDAO y puestoDAO
     public String generarCodigo(){
         String codigoEmpleado="";
+        String dni= vtnNuevoTrabajador.txtDni.getText();
         String area=(String) vtnNuevoTrabajador.cbArea.getSelectedItem();
         String puesto=(String) vtnNuevoTrabajador.cbPuesto.getSelectedItem();
-        int numeroEmp= 1000+empleadoDAO.ContarRegistros();   
         if(Integer.parseInt(area)<10)
         { 
             area="0"+area;
@@ -201,7 +204,7 @@ public class ControladorNT implements ActionListener {
         {
             puesto="0"+puesto;
         }
-        codigoEmpleado=area+puesto+String.valueOf(numeroEmp);
+        codigoEmpleado="E"+area+puesto+dni;
         
         return codigoEmpleado;
     }

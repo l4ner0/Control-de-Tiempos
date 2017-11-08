@@ -140,28 +140,23 @@
                           <Component id="lblEmail" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="txtEmail" min="-2" pref="147" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txtFechNac" max="32767" attributes="0"/>
-                                  <Component id="txtApMa" min="-2" pref="147" max="-2" attributes="0"/>
-                                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="txtDirec" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtFechNac" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="txtApMa" alignment="0" min="-2" pref="147" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
                                       <Component id="rbtnHombre" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="rbtnMujer" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="txtDirec" min="-2" pref="147" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="txtEmail" max="32767" attributes="0"/>
                       </Group>
+                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -257,7 +252,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblTelf">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Telefono :"/>
+                <Property name="text" type="java.lang.String" value="Celular :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblEmail">

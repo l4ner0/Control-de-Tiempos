@@ -131,7 +131,7 @@ public class VtnNuevoTrabajador extends javax.swing.JFrame {
 
         lblDirec.setText("Dirección :");
 
-        lblTelf.setText("Telefono :");
+        lblTelf.setText("Celular :");
 
         lblEmail.setText("E-mail :");
 
@@ -191,22 +191,19 @@ public class VtnNuevoTrabajador extends javax.swing.JFrame {
                     .addComponent(lblDirec)
                     .addComponent(lblEmail))
                 .addGap(23, 23, 23)
-                .addGroup(pnlDatosPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlDatosPersonalesLayout.createSequentialGroup()
-                        .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(pnlDatosPersonalesLayout.createSequentialGroup()
-                        .addGroup(pnlDatosPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtFechNac)
-                            .addComponent(txtApMa, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(pnlDatosPersonalesLayout.createSequentialGroup()
+                .addGroup(pnlDatosPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtDirec, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtFechNac, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlDatosPersonalesLayout.createSequentialGroup()
+                        .addGroup(pnlDatosPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtApMa, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlDatosPersonalesLayout.createSequentialGroup()
                                 .addComponent(rbtnHombre)
                                 .addGap(18, 18, 18)
                                 .addComponent(rbtnMujer)))
-                        .addGap(28, 28, 28))
-                    .addGroup(pnlDatosPersonalesLayout.createSequentialGroup()
-                        .addComponent(txtDirec, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(txtEmail))
+                .addGap(28, 28, 28))
         );
         pnlDatosPersonalesLayout.setVerticalGroup(
             pnlDatosPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
