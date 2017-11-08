@@ -487,9 +487,9 @@ public class VtnNuevoTrabajador extends javax.swing.JFrame {
     }//GEN-LAST:event_txtEmailActionPerformed
 
     private void txtEmailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmailFocusLost
-if(!validarInputs.validaremail(txtEmail)) JOptionPane.showMessageDialog(this, "Email incorrecto","Error de formato Email",JOptionPane.ERROR_MESSAGE);
+if(!validarInputs.validaremail(txtEmail)) {JOptionPane.showMessageDialog(this, "Email incorrecto","Error de formato Email",JOptionPane.ERROR_MESSAGE);
 txtEmail.selectAll();
-txtEmail.requestFocus();
+txtEmail.requestFocus();}
     }//GEN-LAST:event_txtEmailFocusLost
 
     /**
