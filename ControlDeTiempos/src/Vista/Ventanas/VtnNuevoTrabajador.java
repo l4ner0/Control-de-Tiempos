@@ -20,7 +20,7 @@ import javax.swing.JOptionPane;
  */
 public class VtnNuevoTrabajador extends javax.swing.JFrame {
     
-    public FileNameExtensionFilter filtro= new FileNameExtensionFilter("Archivo de imagen ","jpg");
+    public FileNameExtensionFilter filtro= new FileNameExtensionFilter("Archivo de imagen ","png");
 
     /**
      * Creates new form VtnNuevoTrabajador
