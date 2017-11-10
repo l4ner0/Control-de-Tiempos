@@ -43,6 +43,7 @@ public class ControladorCarnet {
             Image imagen = Image.getInstance(rutaImagen);
             imagen.scaleAbsolute(50, 50);
             imagen.setAlignment(Element.ALIGN_CENTER);
+            documento.add(imagen);
             documento.add(getInfo(info1));
             documento.add(getInfo(info2));
             documento.add(getInfo(info3));

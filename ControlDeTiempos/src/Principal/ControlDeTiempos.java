@@ -6,6 +6,7 @@
 
 package Principal;
 
+import Controlador.ControladorCarnet;
 import Controlador.ControladorUICT;
 import util.Conexion;
 import Modelo.EmpleadoDAO;
@@ -28,6 +29,6 @@ public class ControlDeTiempos {
         VtnNuevoTrabajador vtnNuevoTrabajador = new VtnNuevoTrabajador();
         ControladorUICT  control = new ControladorUICT(controlTiempos);
         controlTiempos.setVisible(true);
+
     }
-    
 }

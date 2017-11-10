@@ -28,6 +28,7 @@ public class ControladorNT implements ActionListener {
     EmpleadoDAO empleadoDAO = new EmpleadoDAO();
     ControladorValidarInputs validarVacios= new ControladorValidarInputs();
     ControladorCamaraWeb camara = new ControladorCamaraWeb();
+     ControladorCarnet carnet=new ControladorCarnet();
     String opcionSexo;
     
     public ControladorNT(VtnNuevoTrabajador vtnNuevoTrabajador, 
@@ -174,7 +175,7 @@ public class ControladorNT implements ActionListener {
             {
                 JOptionPane.showMessageDialog(null,"Registro exitoso!! :-)");
                 
-                ControladorCarnet carnet=new ControladorCarnet();
+               
                 carnet.generarCarnet("Nombre de la empresa", idEmpleado, 
                         apellidoPaterno+" "+apellidoMaterno+" "+nombres, 
                         String.valueOf(idArea), String.valueOf(idPuesto),
