@@ -161,17 +161,10 @@ public class ControladorNT implements ActionListener {
             
             //Se añadira despues una opción para guardar carnet y evitar una ubicación estática
             //Se añadirá despues la función para generar código QR en base al codigo de empleado
-            String rutaCarnet1="C:\\Documents and Settings\\diego\\Mis documentos"
+            String rutaCarnet="C:\\Documents and Settings\\diego\\Mis documentos"
                     + "\\NetBeansProjects\\Control-de-Tiempos\\ControlDeTiempos"
-                    + "\\CarnetEmpleado\\"+idEmpleado+"1.pdf";
+                    + "\\CarnetEmpleado\\"+idEmpleado+".pdf";
             
-            String rutaCarnet2="C:\\Documents and Settings\\diego\\Mis documentos"
-                    + "\\NetBeansProjects\\Control-de-Tiempos\\ControlDeTiempos"
-                    + "\\CarnetEmpleado\\"+idEmpleado+"2.pdf";
-            
-            String rutaQR="C:\\Documents and Settings\\diego\\Mis documentos\\"
-                    + "NetBeansProjects\\Control-de-Tiempos\\ControlDeTiempos\\"
-                    + "CodigoQR\\QR.png";
             boolean registro=empleadoDAO.InsertarEmpleado(idEmpleado,rutaFoto, nombres, 
                     apellidoPaterno, apellidoMaterno, sexo, DNI, fechaNacimiento, 
                     distrito, direccion, telefono, correoElectronico, 
@@ -185,9 +178,8 @@ public class ControladorNT implements ActionListener {
                 carnet.generarCarnet("Nombre de la empresa", idEmpleado, 
                         apellidoPaterno+" "+apellidoMaterno+" "+nombres, 
                         String.valueOf(idArea), String.valueOf(idPuesto),
-                        "Vencimiento: 09/11/2017",
-                        rutaFoto,rutaCarnet1);
-                carnet.generarCarnet2("Nombre de la empresa", rutaQR, rutaCarnet2);
+                        "Vencimiento: 09/11/2017",rutaFoto,
+                        rutaCarnet);
                 
                 vtnNuevoTrabajador.txtApPa.setText("");
                 vtnNuevoTrabajador.txtApMa.setText("");
