@@ -17,9 +17,11 @@ import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.Barcode128;
 import com.itextpdf.text.pdf.PdfContentByte;
 import com.itextpdf.text.pdf.PdfWriter;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -36,8 +38,9 @@ public class ControladorCarnet {
         
         try
         {
+            FileOutputStream archivo = new FileOutputStream(salida+".pdf");
             Document documento = new Document(PageSize.A7,36,36,10,10);
-            PdfWriter pw=PdfWriter.getInstance(documento,new FileOutputStream(salida));
+            PdfWriter pw=PdfWriter.getInstance(documento,archivo);
             documento.open();
             documento.add(getHeader(header));
             Image imagen = Image.getInstance(rutaImagen);

@@ -495,7 +495,7 @@ public class IUControlTiempos extends javax.swing.JFrame {
     }//GEN-LAST:event_btnControlMousePressed
 
     private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
-        new CambiaPanel(pnlCentral,new pnlInicio());
+        
         if(this.btnInicio.isSelected())
         {
             this.btnInicio.setColorNormal(new Color(214,217,223));
@@ -596,7 +596,7 @@ public class IUControlTiempos extends javax.swing.JFrame {
     private javax.swing.JPanel panelMenu;
     private javax.swing.JPanel pnlAsistencia;
     private javax.swing.JPanel pnlCabeza;
-    private javax.swing.JPanel pnlCentral;
+    public javax.swing.JPanel pnlCentral;
     private javax.swing.JPanel pnlPrincipal;
     private javax.swing.JPanel pnlTrabajador;
     // End of variables declaration//GEN-END:variables

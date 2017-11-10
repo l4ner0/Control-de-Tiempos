@@ -29,6 +29,13 @@ public class ControlDeTiempos {
         VtnNuevoTrabajador vtnNuevoTrabajador = new VtnNuevoTrabajador();
         ControladorUICT  control = new ControladorUICT(controlTiempos);
         controlTiempos.setVisible(true);
-
+        
+        /*ControladorCarnet carnet = new ControladorCarnet();
+        carnet.generarCarnet("Nombre de la empresa", "E010177344583", 
+                        "URBINA SANTE DIEGO", 
+                        String.valueOf(1), String.valueOf(1),
+                        "Vencimiento: 09/11/2017","C:\\Documents and Settings\\diego\\Mis documentos\\NetBeansProjects\\Control-de-Tiemposv2\\ControlDeTiempos\\FotoEmpleado\\FotoPrueba.png",
+                        "C:\\Documents and Settings\\diego\\Mis documentos\\NetBeansProjects\\Control-de-Tiemposv2\\ControlDeTiempos\\CarnetEmpleado\\E010177344583.pdf");
+*/
     }
 }

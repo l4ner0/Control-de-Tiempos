@@ -7,15 +7,9 @@
 package Controlador;
 
 import Modelo.EmpleadoDAO;
-import Vista.Ventanas.IdentifAcceso;
 import Vista.Ventanas.VtnNuevoTrabajador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -142,6 +136,12 @@ public class ControladorNT implements ActionListener {
                 JOptionPane.showMessageDialog(null,"Elija una foto a subir");
                 return;
             }
+            
+            if(vtnNuevoTrabajador.txtRutaCarnet.getText().equals(""))
+            {
+                JOptionPane.showMessageDialog(null,"Elija donde salvar el carnet");
+                return;
+            }
 
             String idEmpleado=generarCodigo();
             String nombres=vtnNuevoTrabajador.txtNom.getText();
@@ -159,12 +159,7 @@ public class ControladorNT implements ActionListener {
             int idPuesto=Integer.parseInt((String) vtnNuevoTrabajador.cbPuesto.getSelectedItem());
             int idRetencion=Integer.parseInt((String) vtnNuevoTrabajador.cbReten.getSelectedItem());
             String rutaFoto=vtnNuevoTrabajador.txtRutaFoto.getText();
-            
-            //Se añadira despues una opción para guardar carnet y evitar una ubicación estática
-            //Se añadirá despues la función para generar código QR en base al codigo de empleado
-            String rutaCarnet="C:\\Documents and Settings\\diego\\Mis documentos"
-                    + "\\NetBeansProjects\\Control-de-Tiempos\\ControlDeTiempos"
-                    + "\\CarnetEmpleado\\"+idEmpleado+".pdf";
+            String rutaCarnet = vtnNuevoTrabajador.txtRutaCarnet.getText();
             
             boolean registro=empleadoDAO.InsertarEmpleado(idEmpleado,rutaFoto, nombres, 
                     apellidoPaterno, apellidoMaterno, sexo, DNI, fechaNacimiento, 
@@ -180,7 +175,7 @@ public class ControladorNT implements ActionListener {
                         apellidoPaterno+" "+apellidoMaterno+" "+nombres, 
                         String.valueOf(idArea), String.valueOf(idPuesto),
                         "Vencimiento: 09/11/2017",rutaFoto,
-                        rutaCarnet);
+                        rutaCarnet+idEmpleado);
                 
                 vtnNuevoTrabajador.txtApPa.setText("");
                 vtnNuevoTrabajador.txtApMa.setText("");
@@ -226,4 +221,7 @@ public class ControladorNT implements ActionListener {
         
         return codigoEmpleado;
     }
+    
+    
 }
+

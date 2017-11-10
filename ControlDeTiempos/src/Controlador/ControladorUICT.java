@@ -6,11 +6,17 @@
 
 package Controlador;
 
+
 import Modelo.*;
 import Vista.IUControlTiempos;
 import Vista.Ventanas.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.ServerSocket;
+import java.net.Socket;
 import javax.swing.JOptionPane;
 
 /**
@@ -21,7 +27,9 @@ public class ControladorUICT implements ActionListener{
     
     IUControlTiempos iuControlTiempos = new IUControlTiempos();
     variableStatica ventana = new variableStatica();
-    
+    pnlControl panelControl = new pnlControl();
+    Prueba p = new Prueba();
+    public final static int PORT=5000;
     public ControladorUICT(IUControlTiempos iuControlTiempos){
         this.iuControlTiempos=iuControlTiempos;
         
@@ -30,6 +38,9 @@ public class ControladorUICT implements ActionListener{
         this.iuControlTiempos.btnListar.addActionListener(this);
         this.iuControlTiempos.btnControl.addActionListener(this);
         this.iuControlTiempos.btnReporte.addActionListener(this);
+        ControladorServicios servidor = new ControladorServicios(panelControl,p);
+        Thread server = new Thread(servidor);   
+        server.start();
         
     }
  
@@ -60,7 +71,8 @@ public class ControladorUICT implements ActionListener{
         
         if(e.getSource()==iuControlTiempos.btnControl)
         {
-            JOptionPane.showMessageDialog(null,"Le distes a Control de asistencias :-)");
+            
+            
         }
         
         if(e.getSource()==iuControlTiempos.btnReporte)
@@ -69,4 +81,6 @@ public class ControladorUICT implements ActionListener{
         }
         
     }
+    
+
 }

@@ -12,6 +12,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import Controlador.ControladorValidarInputs;
+import java.io.File;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,8 +20,9 @@ import javax.swing.JOptionPane;
  * @author diego
  */
 public class VtnNuevoTrabajador extends javax.swing.JFrame {
-    
+    JFileChooser dlg = new JFileChooser();
     public FileNameExtensionFilter filtro= new FileNameExtensionFilter("Archivo de imagen ","png");
+    //public FileNameExtensionFilter filtroCarnet= new FileNameExtensionFilter("Documento ","pdf");
 
     /**
      * Creates new form VtnNuevoTrabajador
@@ -58,6 +60,8 @@ public class VtnNuevoTrabajador extends javax.swing.JFrame {
         this.setResizable(false);
         grupoSexo.add(rbtnHombre);
         grupoSexo.add(rbtnMujer);
+        dlg.setCurrentDirectory(new File("C:\\Documents and Settings\\diego\\Mis documentos\\NetBeansProjects\\ProyectoControlTiempos\\ControlDeTiemposv9\\ControlDeTiempos\\CarnetEmpleado\\"));
+        txtRutaCarnet.setText("C:\\Documents and Settings\\diego\\Mis documentos\\NetBeansProjects\\ProyectoControlTiempos\\ControlDeTiemposv9\\ControlDeTiempos\\CarnetEmpleado\\");
     }
 
     /**
@@ -109,7 +113,10 @@ public class VtnNuevoTrabajador extends javax.swing.JFrame {
         btnTomarFoto = new javax.swing.JButton();
         btnBuscarFoto = new javax.swing.JButton();
         txtRutaFoto = new javax.swing.JTextField();
+        rutaTomaFoto = new javax.swing.JTextField();
         lblTitulo = new javax.swing.JLabel();
+        btnGuardarCarnet = new javax.swing.JButton();
+        txtRutaCarnet = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
@@ -321,6 +328,7 @@ public class VtnNuevoTrabajador extends javax.swing.JFrame {
         });
 
         btnBuscarFoto.setText("Buscar Foto");
+        btnBuscarFoto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnBuscarFoto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarFotoActionPerformed(evt);
@@ -337,20 +345,22 @@ public class VtnNuevoTrabajador extends javax.swing.JFrame {
         pnlFotoTrabajador.setLayout(pnlFotoTrabajadorLayout);
         pnlFotoTrabajadorLayout.setHorizontalGroup(
             pnlFotoTrabajadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlFotoTrabajadorLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnTomarFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60))
             .addGroup(pnlFotoTrabajadorLayout.createSequentialGroup()
-                .addGroup(pnlFotoTrabajadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlFotoTrabajadorLayout.createSequentialGroup()
-                        .addGap(56, 56, 56)
-                        .addComponent(btnBuscarFoto))
-                    .addGroup(pnlFotoTrabajadorLayout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addGroup(pnlFotoTrabajadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(pnlFotoTrabajadorLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(btnTomarFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(lblFoto, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
-                            .addComponent(txtRutaFoto, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE))))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addGroup(pnlFotoTrabajadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(rutaTomaFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtRutaFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(pnlFotoTrabajadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(pnlFotoTrabajadorLayout.createSequentialGroup()
+                            .addGap(74, 74, 74)
+                            .addComponent(btnBuscarFoto))
+                        .addGroup(pnlFotoTrabajadorLayout.createSequentialGroup()
+                            .addGap(34, 34, 34)
+                            .addComponent(lblFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         pnlFotoTrabajadorLayout.setVerticalGroup(
             pnlFotoTrabajadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -359,15 +369,24 @@ public class VtnNuevoTrabajador extends javax.swing.JFrame {
                 .addComponent(lblFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnBuscarFoto)
-                .addGap(13, 13, 13)
+                .addGap(18, 18, 18)
                 .addComponent(txtRutaFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(27, 27, 27)
                 .addComponent(btnTomarFoto)
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(rutaTomaFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         lblTitulo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblTitulo.setText("REGISTRO DE TRABAJADOR");
+
+        btnGuardarCarnet.setText("Guardar Carnet");
+        btnGuardarCarnet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarCarnetActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlPrincipalLayout = new javax.swing.GroupLayout(pnlPrincipal);
         pnlPrincipal.setLayout(pnlPrincipalLayout);
@@ -375,18 +394,21 @@ public class VtnNuevoTrabajador extends javax.swing.JFrame {
             pnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlPrincipalLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(pnlFotoTrabajador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pnlFotoTrabajador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addGroup(pnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlPrincipalLayout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addGroup(pnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(pnlDatosPersonales, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(pnlDatosEmpresa, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(pnlPrincipalLayout.createSequentialGroup()
-                        .addGap(286, 286, 286)
-                        .addComponent(btnGrabar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(pnlDatosPersonales, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalLayout.createSequentialGroup()
+                            .addComponent(btnGuardarCarnet)
+                            .addGap(18, 18, 18)
+                            .addComponent(txtRutaCarnet, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnGrabar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(31, 31, 31))
+                        .addComponent(pnlDatosEmpresa, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlPrincipalLayout.createSequentialGroup()
                 .addGap(26, 26, 26)
@@ -404,12 +426,16 @@ public class VtnNuevoTrabajador extends javax.swing.JFrame {
                         .addComponent(pnlDatosPersonales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(56, 56, 56)
                         .addComponent(pnlDatosEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(pnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnGrabar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(pnlFotoTrabajador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnGuardarCarnet)
+                            .addComponent(txtRutaCarnet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(pnlPrincipalLayout.createSequentialGroup()
+                        .addComponent(pnlFotoTrabajador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 8, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -459,7 +485,7 @@ public class VtnNuevoTrabajador extends javax.swing.JFrame {
             Image nuevaImagen = imagen.getScaledInstance(164, 210, java.awt.Image.SCALE_SMOOTH);
             ImageIcon nuevoIcono=new ImageIcon(nuevaImagen);
             lblFoto.setIcon(nuevoIcono);
-            txtRutaFoto.setText(ruta);
+            txtRutaFoto.setText(nombreArchivo);
             
         }
     }//GEN-LAST:event_btnBuscarFotoActionPerformed
@@ -482,6 +508,20 @@ txtEmail.selectAll();
 txtEmail.requestFocus();}
     }//GEN-LAST:event_txtEmailFocusLost
 
+    private void btnGuardarCarnetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarCarnetActionPerformed
+
+         dlg.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        int option = dlg.showSaveDialog(this);
+        
+        if(option==JFileChooser.APPROVE_OPTION)
+        {
+            File f=dlg.getSelectedFile();
+            txtRutaCarnet.setText(f.toString());
+            
+            System.out.println(txtRutaCarnet.getText());
+        }
+    }//GEN-LAST:event_btnGuardarCarnetActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -490,6 +530,7 @@ txtEmail.requestFocus();}
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnBuscarFoto;
     public javax.swing.JButton btnGrabar;
+    public javax.swing.JButton btnGuardarCarnet;
     public javax.swing.JButton btnSalir;
     public javax.swing.JButton btnTomarFoto;
     public javax.swing.JComboBox cbArea;
@@ -520,6 +561,7 @@ txtEmail.requestFocus();}
     public javax.swing.JPanel pnlPrincipal;
     public javax.swing.JRadioButton rbtnHombre;
     public javax.swing.JRadioButton rbtnMujer;
+    private javax.swing.JTextField rutaTomaFoto;
     public javax.swing.JTextField txtApMa;
     public javax.swing.JTextField txtApPa;
     public javax.swing.JTextField txtDirec;
@@ -527,6 +569,7 @@ txtEmail.requestFocus();}
     public javax.swing.JTextField txtEmail;
     public javax.swing.JTextField txtFechNac;
     public javax.swing.JTextField txtNom;
+    public javax.swing.JTextField txtRutaCarnet;
     public javax.swing.JTextField txtRutaFoto;
     public javax.swing.JTextField txtTelf;
     // End of variables declaration//GEN-END:variables
