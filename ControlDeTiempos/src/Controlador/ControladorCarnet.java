@@ -58,7 +58,7 @@ public class ControladorCarnet {
         
     }
     
-    private Paragraph getHeader(String texto){
+    public Paragraph getHeader(String texto){
         Paragraph p = new Paragraph();
         Chunk c = new Chunk();
         p.setAlignment(Element.ALIGN_CENTER);
@@ -68,7 +68,7 @@ public class ControladorCarnet {
         return p;
     }
     
-    private Paragraph getInfo(String texto){
+    public Paragraph getInfo(String texto){
         Paragraph p = new Paragraph();
         Chunk c = new Chunk();
         p.setAlignment(Element.ALIGN_CENTER);
@@ -78,10 +78,9 @@ public class ControladorCarnet {
         return p;
     }
     
-    private Image getBarcode(Document documento, PdfWriter pw, String codigo){
+    public Image getBarcode(Document documento, PdfWriter pw, String codigo){
         PdfContentByte cimg=pw.getDirectContent();
         Barcode128 code128 = new Barcode128();
-        code128.setCode(formatearCodigo(codigo));
         code128.setCode(codigo);
         code128.setCodeType(Barcode128.CODE128);
         code128.setTextAlignment(Element.ALIGN_CENTER);
@@ -93,9 +92,5 @@ public class ControladorCarnet {
         return imagen;
     }
     
-    private String formatearCodigo(String num){
-        NumberFormat formato=new DecimalFormat("0000000000000");
-        return formato.format((num!=null) ? Integer.parseInt(num): 0000000000000);
-    }
-    
+  
 }
