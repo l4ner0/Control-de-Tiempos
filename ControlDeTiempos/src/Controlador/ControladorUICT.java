@@ -27,8 +27,8 @@ public class ControladorUICT implements ActionListener{
     
     IUControlTiempos iuControlTiempos = new IUControlTiempos();
     variableStatica ventana = new variableStatica();
-    pnlControl panelControl = new pnlControl();
-    Prueba p = new Prueba();
+    VtnControl vntControl = new VtnControl();
+    EmpleadoDAO empleadoDAO = new EmpleadoDAO();
     public final static int PORT=5000;
     public ControladorUICT(IUControlTiempos iuControlTiempos){
         this.iuControlTiempos=iuControlTiempos;
@@ -38,7 +38,7 @@ public class ControladorUICT implements ActionListener{
         this.iuControlTiempos.btnListar.addActionListener(this);
         this.iuControlTiempos.btnControl.addActionListener(this);
         this.iuControlTiempos.btnReporte.addActionListener(this);
-        ControladorServicios servidor = new ControladorServicios(panelControl,p);
+        ControladorServicios servidor = new ControladorServicios(vntControl,empleadoDAO);
         Thread server = new Thread(servidor);   
         server.start();
         
@@ -53,7 +53,7 @@ public class ControladorUICT implements ActionListener{
         if(e.getSource()==iuControlTiempos.btnNuevoTrabajador)
         {
             VtnNuevoTrabajador nuevoTrabajador = new VtnNuevoTrabajador();
-            EmpleadoDAO empleadoDAO = new EmpleadoDAO();
+            
             ControladorNT controladorNT = new ControladorNT(nuevoTrabajador,empleadoDAO);
             
             if(ventana.ventanaNuevoTrabajador==false)
@@ -64,15 +64,15 @@ public class ControladorUICT implements ActionListener{
             } 
         }
         
+        if(e.getSource()==iuControlTiempos.btnControl)
+        {
+            VtnControl vntControl = new VtnControl();
+
+        }
+        
         if(e.getSource()==iuControlTiempos.btnListar)
         {
             JOptionPane.showMessageDialog(null,"Le distes a Listar :-)");
-        }
-        
-        if(e.getSource()==iuControlTiempos.btnControl)
-        {
-            
-            
         }
         
         if(e.getSource()==iuControlTiempos.btnReporte)

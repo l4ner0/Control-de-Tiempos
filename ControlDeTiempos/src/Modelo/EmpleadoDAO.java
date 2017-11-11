@@ -2,12 +2,16 @@
 
 package Modelo;
 
-import util.Conexion;
 import java.io.File;
 import java.io.FileInputStream;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import util.Conexion;
 
 
 public class EmpleadoDAO {
@@ -112,6 +116,45 @@ public class EmpleadoDAO {
             System.out.println(e);
         }
         return puesto;
+    }
+    
+    public ArrayList BuscarEmpleado(String idEmpleado){
+        
+        ArrayList <String> datosEmpleado = new ArrayList();       
+        try {
+            Connection accesoDB=conexion.getConexion();
+            CallableStatement cs = accesoDB.prepareCall("{call usp_buscar_empleado(?)}");
+            cs.setString(1, idEmpleado);
+            ResultSet rs=cs.executeQuery();
+            boolean resultado=rs.next();
+            System.out.println(resultado);
+            if(resultado){ 
+                datosEmpleado.add(rs.getString(1));
+                datosEmpleado.add(rs.getString(2));
+                datosEmpleado.add(rs.getString(3));
+                datosEmpleado.add(rs.getString(4));
+                datosEmpleado.add(rs.getString(5));
+                datosEmpleado.add(rs.getString(6));
+                datosEmpleado.add(rs.getString(7));
+                datosEmpleado.add(rs.getString(8));
+                datosEmpleado.add(rs.getString(9));
+                datosEmpleado.add(rs.getString(10));
+                datosEmpleado.add(rs.getString(11));
+                datosEmpleado.add(rs.getString(12));
+                datosEmpleado.add(rs.getString(13));
+                datosEmpleado.add(rs.getString(14));
+                datosEmpleado.add(rs.getString(15));
+                datosEmpleado.add(rs.getString(16));
+            }else
+            {
+                datosEmpleado=null;
+            }
+            
+            
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }    
+        return datosEmpleado;
     }
     
 }

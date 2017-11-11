@@ -13,5 +13,6 @@ package Vista.Ventanas;
 public class variableStatica {
     
     public static boolean ventanaNuevoTrabajador=false;
+    public static boolean ventanaControlAsistencia=false;
     
 }

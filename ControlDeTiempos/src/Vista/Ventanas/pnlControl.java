@@ -29,45 +29,23 @@ public class pnlControl extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel3 = new javax.swing.JLabel();
-        txtNomApControl = new javax.swing.JLabel();
-        txtAreaControl = new javax.swing.JLabel();
-        txtPuestoControl = new javax.swing.JLabel();
-        lblFotoControl = new javax.swing.JLabel();
-
         setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(761, 666));
         setPreferredSize(new java.awt.Dimension(761, 666));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("CONTROL ASISTENCIAS");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 40, 258, 26));
-
-        txtNomApControl.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        txtNomApControl.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        add(txtNomApControl, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 210, 321, 56));
-
-        txtAreaControl.setText("                                 AREA DE LA EMPRESA");
-        txtAreaControl.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        add(txtAreaControl, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 310, 321, 55));
-
-        txtPuestoControl.setText("                                 PUESTO EN LA EMPRESA");
-        txtPuestoControl.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        add(txtPuestoControl, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 420, 321, 47));
-
-        lblFotoControl.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        add(lblFotoControl, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 233, 321));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1680, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 736, Short.MAX_VALUE)
+        );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel3;
-    public javax.swing.JLabel lblFotoControl;
-    public javax.swing.JLabel txtAreaControl;
-    public javax.swing.JLabel txtNomApControl;
-    public javax.swing.JLabel txtPuestoControl;
     // End of variables declaration//GEN-END:variables
 }
