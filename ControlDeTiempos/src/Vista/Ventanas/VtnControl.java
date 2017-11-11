@@ -17,6 +17,10 @@ variableStatica ventana = new variableStatica();
      */
     public VtnControl() {
         initComponents();
+        txtIdEmpleado.setEditable(false);
+        txtApNom.setEditable(false);
+        txtArea.setEditable(false);
+        txtPuesto.setEditable(false);
         setLocationRelativeTo(this);   
         
         addWindowListener( new java.awt.event.WindowAdapter() {
@@ -39,32 +43,74 @@ variableStatica ventana = new variableStatica();
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblTexto = new javax.swing.JLabel();
-        txtTexto = new javax.swing.JTextField();
+        txtApNom = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        txtIdEmpleado = new javax.swing.JTextField();
+        txtArea = new javax.swing.JTextField();
+        txtPuesto = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        lblTexto.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txtApNom.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtApNom.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtApNom.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txtApNom.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+
+        jLabel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        txtIdEmpleado.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtIdEmpleado.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtIdEmpleado.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txtIdEmpleado.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+
+        txtArea.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtArea.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtArea.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txtArea.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+
+        txtPuesto.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtPuesto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtPuesto.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txtPuesto.setDisabledTextColor(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtTexto, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE)
-                    .addComponent(lblTexto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(491, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtApNom)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(txtIdEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(txtArea, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(88, 88, 88))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(txtPuesto, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(99, 99, 99)
-                .addComponent(lblTexto, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(txtTexto, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(361, Short.MAX_VALUE))
+                .addGap(70, 70, 70)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(txtIdEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtApNom, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(84, 84, 84)
+                        .addComponent(txtArea, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(93, 93, 93)
+                        .addComponent(txtPuesto, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(139, Short.MAX_VALUE))
         );
 
         pack();
@@ -76,7 +122,10 @@ variableStatica ventana = new variableStatica();
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JLabel lblTexto;
-    public javax.swing.JTextField txtTexto;
+    private javax.swing.JLabel jLabel1;
+    public javax.swing.JTextField txtApNom;
+    public javax.swing.JTextField txtArea;
+    public javax.swing.JTextField txtIdEmpleado;
+    public javax.swing.JTextField txtPuesto;
     // End of variables declaration//GEN-END:variables
 }

@@ -26,7 +26,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="pnlPrincipal" alignment="0" max="32767" attributes="0"/>
+          <Component id="pnlPrincipal" alignment="0" pref="1834" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -63,7 +63,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnMenu" min="-2" pref="63" max="-2" attributes="0"/>
-                      <EmptySpace pref="922" max="32767" attributes="0"/>
+                      <EmptySpace pref="1761" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -123,7 +123,7 @@
                   <Component id="pnlTrabajador" max="32767" attributes="0"/>
                   <Component id="btnControl" alignment="0" max="32767" attributes="0"/>
                   <Component id="btnListar" alignment="0" max="32767" attributes="0"/>
-                  <Component id="pnlAsistencia" alignment="0" pref="172" max="32767" attributes="0"/>
+                  <Component id="pnlAsistencia" alignment="0" pref="174" max="32767" attributes="0"/>
                   <Component id="btnInicio" alignment="0" max="32767" attributes="0"/>
                   <Component id="btnReporte" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
@@ -154,7 +154,7 @@
                       <Component id="btnReporte" min="-2" pref="59" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                       <Component id="btnSalir" min="-2" pref="59" max="-2" attributes="0"/>
-                      <EmptySpace pref="71" max="32767" attributes="0"/>
+                      <EmptySpace pref="74" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -487,7 +487,7 @@
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
-              <GridBagConstraints gridX="1" gridY="1" gridWidth="3" gridHeight="2" fill="2" ipadX="805" ipadY="736" insetsTop="0" insetsLeft="0" insetsBottom="0" insetsRight="2" anchor="10" weightX="0.1" weightY="0.1"/>
+              <GridBagConstraints gridX="1" gridY="1" gridWidth="3" gridHeight="2" fill="2" ipadX="805" ipadY="736" insetsTop="0" insetsLeft="0" insetsBottom="0" insetsRight="2" anchor="10" weightX="0.0" weightY="0.2"/>
             </Constraint>
           </Constraints>
 

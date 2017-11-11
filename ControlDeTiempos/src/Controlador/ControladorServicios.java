@@ -62,14 +62,24 @@ public class ControladorServicios implements Runnable{
                 
                         ventana.ventanaControlAsistencia=true;
                     }
-                       JOptionPane.showMessageDialog(null,request);
+                       
                        String ApellidoP=String.valueOf(datosEmpleado.get(3));
                        String ApellidoM=String.valueOf(datosEmpleado.get(4));
                        String Nombres=String.valueOf(datosEmpleado.get(2));
-                       vtnControl.txtTexto.setText(ApellidoP+" "+ApellidoM+" "+Nombres);
+                       String idEmpleado=String.valueOf(datosEmpleado.get(0));
+                       String area=String.valueOf(datosEmpleado.get(13));
+                       String puesto=String.valueOf(datosEmpleado.get(14));
+                       vtnControl.txtIdEmpleado.setText(idEmpleado);
+                       vtnControl.txtApNom.setText(ApellidoP+" "+ApellidoM+" "+Nombres);
+                       vtnControl.txtArea.setText(area);
+                       vtnControl.txtPuesto.setText(puesto);
+                       JOptionPane.showMessageDialog(null,request);
                    }else{
                        JOptionPane.showMessageDialog(null,"El empleado no existe");
-                       vtnControl.txtTexto.setText("");
+                       vtnControl.txtIdEmpleado.setText("");
+                       vtnControl.txtApNom.setText("");
+                       vtnControl.txtArea.setText("");
+                       vtnControl.txtPuesto.setText("");
                    } 
                }
                
