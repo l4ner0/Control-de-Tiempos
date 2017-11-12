@@ -10,6 +10,7 @@ import Modelo.EmpleadoDAO;
 import Vista.Ventanas.VtnNuevoTrabajador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -32,6 +33,9 @@ public class ControladorNT implements ActionListener {
         this.empleadoDAO = empleadoDAO;
         this.vtnNuevoTrabajador.btnGrabar.addActionListener(this);
         this.vtnNuevoTrabajador.btnTomarFoto.addActionListener(this);
+        this.vtnNuevoTrabajador.cbArea.addActionListener(this);
+        this.vtnNuevoTrabajador.cbPuesto.addActionListener(this);
+        llenarAreas();
     }
     
     public void actionPerformed(ActionEvent e){
@@ -40,6 +44,7 @@ public class ControladorNT implements ActionListener {
         {
             camara.run();
         }
+        
         if(e.getSource()==vtnNuevoTrabajador.btnGrabar)
         {
             if(vtnNuevoTrabajador.txtApPa.getText().equals(""))
@@ -155,8 +160,8 @@ public class ControladorNT implements ActionListener {
             String telefono=vtnNuevoTrabajador.txtTelf.getText();
             String correoElectronico=vtnNuevoTrabajador.txtEmail.getText();
             String asignacionFamiliar=(String) vtnNuevoTrabajador.cbAsig.getSelectedItem();
-            int idArea=Integer.parseInt((String) vtnNuevoTrabajador.cbArea.getSelectedItem());
-            int idPuesto=Integer.parseInt((String) vtnNuevoTrabajador.cbPuesto.getSelectedItem());
+            String idArea=  (String)vtnNuevoTrabajador.cbArea.getSelectedItem();
+            String idPuesto=(String) vtnNuevoTrabajador.cbPuesto.getSelectedItem();
             int idRetencion=Integer.parseInt((String) vtnNuevoTrabajador.cbReten.getSelectedItem());
             String rutaFoto=vtnNuevoTrabajador.txtRutaFoto.getText();
             String rutaCarnet = vtnNuevoTrabajador.txtRutaCarnet.getText();
@@ -173,7 +178,7 @@ public class ControladorNT implements ActionListener {
                
                 carnet.generarCarnet("Nombre de la empresa", idEmpleado, 
                         apellidoPaterno+" "+apellidoMaterno+" "+nombres, 
-                        String.valueOf(idArea), String.valueOf(idPuesto),
+                        idArea, idPuesto,
                         "Vencimiento: 09/11/2017",rutaFoto,
                         rutaCarnet+idEmpleado);
                 
@@ -201,27 +206,70 @@ public class ControladorNT implements ActionListener {
             }
         }
         
+        if(e.getSource()==vtnNuevoTrabajador.cbArea)  
+        {   
+            vtnNuevoTrabajador.cbPuesto.removeAllItems();
+            String nombreArea=(String)vtnNuevoTrabajador.cbArea.getSelectedItem();
+            llenarPuestos(nombreArea);
+        }
+             
     } 
     
     //utilizar metodo hasta crear areaDAO y puestoDAO
     public String generarCodigo(){
         String codigoEmpleado="";
         String dni= vtnNuevoTrabajador.txtDni.getText();
-        String area=(String) vtnNuevoTrabajador.cbArea.getSelectedItem();
-        String puesto=(String) vtnNuevoTrabajador.cbPuesto.getSelectedItem();
-        if(Integer.parseInt(area)<10)
+        
+        String nombreArea=(String) vtnNuevoTrabajador.cbArea.getSelectedItem();
+        int idArea=empleadoDAO.getIdArea(nombreArea);
+        String area=String.valueOf(idArea);
+        
+        String nombrePuesto=(String) vtnNuevoTrabajador.cbPuesto.getSelectedItem();
+        int idPuesto=empleadoDAO.getIdPuesto(nombrePuesto);
+        String puesto=String.valueOf(idPuesto);
+        
+        if(idArea<10)
         { 
-            area="0"+area;
+            area="0"+String.valueOf(idArea);
         }
-        if(Integer.parseInt(puesto)<10)
+        if(idPuesto<10)
         {
-            puesto="0"+puesto;
+            puesto="0"+String.valueOf(idPuesto);
         }
         codigoEmpleado="E"+area+puesto+dni;
         
         return codigoEmpleado;
     }
     
+    public void llenarAreas(){
+        ArrayList areas= new ArrayList();
+        
+        areas=empleadoDAO.getNomArea();
+        if(areas!=null)
+        {
+            vtnNuevoTrabajador.cbArea.addItem("Seleccione una opción");
+            System.out.println(areas.size());
+            for(int i=0; i<areas.size();i++)
+            {
+                vtnNuevoTrabajador.cbArea.addItem(areas.get(i));
+            }
+        }    
+    }
+    
+    public void llenarPuestos(String nombreArea){
+        ArrayList puestos= new ArrayList();
+        
+        puestos=empleadoDAO.getNomPuesto(nombreArea);
+        if(puestos!=null)
+        {
+            vtnNuevoTrabajador.cbPuesto.addItem("Seleccione una opción");
+            System.out.println(puestos.size());
+            for(int i=0; i<puestos.size();i++)
+            {
+                vtnNuevoTrabajador.cbPuesto.addItem(puestos.get(i));
+            }
+        }    
+    }
     
 }
 

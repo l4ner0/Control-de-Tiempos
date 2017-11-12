@@ -25,7 +25,7 @@ public class EmpleadoDAO {
         String nombres,String apellidoPaterno,String apellidoMaterno,String sexo,
         String DNI,String fechaNacimiento,String DistritoResidencia,
         String direccion,String telefono,String correoElectronico,
-        String asignacionFamiliar,int idArea,int idPuesto,
+        String asignacionFamiliar,String idArea,String idPuesto,
         int idRetencion ){
         
         boolean registro=false;
@@ -48,8 +48,8 @@ public class EmpleadoDAO {
            cs.setString(11,telefono);
            cs.setString(12,correoElectronico);
            cs.setString(13,asignacionFamiliar);
-           cs.setInt(14,idArea);
-           cs.setInt(15,idPuesto);
+           cs.setString(14,idArea);
+           cs.setString(15,idPuesto);
            cs.setInt(16,idRetencion);
            
            
@@ -64,58 +64,83 @@ public class EmpleadoDAO {
         }
         return registro;
     }
-    
-    public int ContarRegistros(){
-        int numRegistros = 0 ;
-        try
-        {
-         Connection accesoDB=conexion.getConexion();
-         CallableStatement cs = accesoDB.prepareCall("{call usp_mostrar_empleados}");
-         ResultSet rs=cs.executeQuery();
-         while(rs.next())
-         {
-             numRegistros++;
-         
-         }
-        }catch(Exception e)
-        {
-            System.out.println(e);
-        }
-        
-        return numRegistros;
-    }
+
     
     //Eliminar una vez que se cree AreasEmpresaDAO y PuestoDAO
-    public String getArea(String nombreArea){
-        String area="";
+    public ArrayList getNomArea(){
+        ArrayList areas = new ArrayList();
         try
         {
             Connection accesoDB=conexion.getConexion();
-            CallableStatement cs = accesoDB.prepareCall("");
+            CallableStatement cs = accesoDB.prepareCall("{call usp_mostrar_areas}");
             ResultSet rs=cs.executeQuery();
-            area=rs.getString(1);
-            
+            while(rs.next())
+            {
+                areas.add(rs.getString(2));  
+            } 
         }catch(Exception e)
         {
             System.out.println(e);
         }
-        return area;
+        return areas;
     }
     
-    public String getPuesto(String nombrePuesto){
-        String puesto="";
+    public int getIdArea(String nombreArea){
+        int idArea=0;
         try
         {
             Connection accesoDB=conexion.getConexion();
-            CallableStatement cs = accesoDB.prepareCall("");
+            CallableStatement cs = accesoDB.prepareCall("{call usp_buscar_idArea(?)}");
+            cs.setString(1,nombreArea);
             ResultSet rs=cs.executeQuery();
-            puesto=rs.getString(1);
+            while(rs.next())
+            {
+                idArea=rs.getInt(1);  
+            } 
+        }catch(Exception e)
+        {
+            System.out.println(e);
+        }
+        return idArea;
+    }
+    
+    public ArrayList getNomPuesto(String nombreArea){
+        ArrayList puesto= new ArrayList();
+        try
+        {
+            Connection accesoDB=conexion.getConexion();
+            CallableStatement cs = accesoDB.prepareCall("{call usp_mostrar_puestos2(?)}");
+            cs.setString(1,nombreArea);
+            ResultSet rs=cs.executeQuery();
+            while(rs.next())
+            {
+                puesto.add(rs.getString(1));  
+            } 
             
         }catch(Exception e)
         {
             System.out.println(e);
         }
         return puesto;
+    }
+    
+    public int getIdPuesto(String nombrePuesto){
+        int idPuesto=0;
+        try
+        {
+            Connection accesoDB=conexion.getConexion();
+            CallableStatement cs = accesoDB.prepareCall("{call usp_buscar_idPuesto(?)}");
+            cs.setString(1,nombrePuesto);
+            ResultSet rs=cs.executeQuery();
+            while(rs.next())
+            {
+                idPuesto=rs.getInt(1);  
+            } 
+        }catch(Exception e)
+        {
+            System.out.println(e);
+        }
+        return idPuesto;
     }
     
     public ArrayList BuscarEmpleado(String idEmpleado){

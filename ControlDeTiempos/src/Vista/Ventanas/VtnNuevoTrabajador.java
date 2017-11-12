@@ -261,9 +261,16 @@ public class VtnNuevoTrabajador extends javax.swing.JFrame {
 
         lblRet.setText("Retención :");
 
-        cbArea.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione una opción", "1", "2", "3", "4", "5" }));
-
-        cbPuesto.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione una opción", "1", "2", "3", "4", "5" }));
+        cbArea.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                cbAreaMousePressed(evt);
+            }
+        });
+        cbArea.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbAreaActionPerformed(evt);
+            }
+        });
 
         cbReten.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione una opción", "1", "2", "3", "4", "5" }));
 
@@ -521,6 +528,14 @@ txtEmail.requestFocus();}
             System.out.println(txtRutaCarnet.getText());
         }
     }//GEN-LAST:event_btnGuardarCarnetActionPerformed
+
+    private void cbAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbAreaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbAreaActionPerformed
+
+    private void cbAreaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbAreaMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbAreaMousePressed
 
     /**
      * @param args the command line arguments

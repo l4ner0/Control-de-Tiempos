@@ -317,6 +317,15 @@ begin
 end
 GO
 
+@idEmpleado CHAR(13)
+AS
+BEGIN
+	select idEmpleado,fotoEmpleado,nombres,apellidoPaterno,apellidoMaterno,sexo,DNI,fechaNacimiento,
+	DistritoResidencia,direccion,telefono,correoElectronico,asignacionFamiliar,(select nombreArea from areasEmpresa where idArea=(select idArea from empleado where idEmpleado=@idEmpleado)),
+	(select nombrePuesto from puesto where idPuesto=(select idPuesto from empleado where idEmpleado=@idEmpleado)),idRetencion from empleado where idEmpleado=@idEmpleado
+END
+GO
+
 --Asistencia-------------------------------------------------------------------------------------------------------------------
 CREATE PROC usp_graba_asistencia
 @IdASISTENCIA INT, @FECHA DATE, @HORAENTRA TIME, @HORASALE TIME,
