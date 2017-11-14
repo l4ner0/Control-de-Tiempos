@@ -193,9 +193,9 @@ Insert HorarioPuesto Values('1','2')
 Insert HorarioPuesto Values('2','2')
 
 --empleado
-INSERT INTO empleado VALUES('E001','July','Torres','Chavez','Femenino','48433198','04/01/1994','Rimac','Jr. Corregidores 147','980775464',
+INSERT INTO empleado VALUES('E001','rutaFoto','July','Torres','Chavez','Femenino','48433198','04/01/1994','Rimac','Jr. Corregidores 147','980775464',
 							'july.tc19@gmail.com','Si',1,1,4)
-INSERT INTO empleado VALUES('E002','Carlos','Montero','Rosas','Masculino','48533198','09/08/1994','Los olivos','Jr. olivares 123','984652904',
+INSERT INTO empleado VALUES('E002','rutaFoto','Carlos','Montero','Rosas','Masculino','48533198','09/08/1994','Los olivos','Jr. olivares 123','984652904',
 							'carlos.oli@gmail.com','No',2,2,3)
 
 select*from empleado
@@ -221,7 +221,7 @@ INSERT INTO areasEmpresa VALUES(@NOM,@DES)
 end
 go
 --EJECUTANDO P.A.
-EXEC graba_areas 'RECURSOS HUMANOS','Se encarga de la planificacion, reclutamiennto, seleccion y contratacion del personal'
+EXEC usp_graba_areas 'RECURSOS HUMANOS','Se encarga de la planificacion, reclutamiennto, seleccion y contratacion del personal'
 SELECT*FROM areasEmpresa
 
 create proc usp_modifica_areas
@@ -239,6 +239,14 @@ as
 begin
 	delete from areasEmpresa where idArea=@idArea
 end
+go
+
+CREATE PROC usp_buscar_idArea
+@nombreArea VARCHAR(20)
+AS
+BEGIN
+	select idArea from areasEmpresa where nombreArea=@nombreArea
+END
 go
 
 
@@ -261,6 +269,29 @@ INSERT INTO puesto VALUES(@NOMPUESTO,@DESPUESTO,@REQUEPUESTO,@SUELDO,@VACAN,@IdA
 end
 GO
 
+CREATE PROC usp_buscar_idPuesto
+@nombrePuesto VARCHAR(40)
+AS
+BEGIN
+	select idPuesto from puesto where nombrePuesto=@nombrePuesto
+END
+GO
+
+CREATE PROC usp_mostrar_puestos
+AS
+BEGIN
+	select * from puesto
+END
+GO
+
+CREATE PROC usp_mostrar_puestos2
+@nombreArea VARCHAR(20)
+AS
+BEGIN
+	select nombrePuesto from puesto where idArea=(select idArea from areasEmpresa where nombreArea=@nombreArea)
+END
+GO
+
 --HorarioPuesto----------------------------------------------------------------------------------------------------------------
 CREATE PROC usp_graba_HorarioPuesto
 @IdPUESTO INT, @IdHORARIO INT
@@ -270,7 +301,7 @@ INSERT INTO HorarioPuesto VALUES(@IdPUESTO,@IdHORARIO);
 end
 GO
 --EJECUTANDO P.A.
-EXEC graba_HorarioPuesto '2','1'
+EXEC usp_graba_HorarioPuesto '2','1'
 SELECT*FROM HorarioPuesto
 
 --Empleado---------------------------------------------------------------------------------------------------------------------
@@ -284,7 +315,7 @@ go
 create proc usp_graba_empleado
 @IdEMPLE CHAR(13),@fotoEmpleado VARCHAR(200), @NOMEMPLE VARCHAR(20), @APEPATERNO VARCHAR(20),
 @APEMATERNO VARCHAR(20), @SEXO VARCHAR(10), @DNI CHAR(8),
-@FECHANACI DATE, @DISTRITO VARCHAR(15), @DIREC VARCHAR(40),
+@FECHANACI VARCHAR(100), @DISTRITO VARCHAR(15), @DIREC VARCHAR(40),
 @TELEF CHAR(9),@CORREO VARCHAR(20), @ASIGFAMILI VARCHAR(2),
 @IdAREA INT, @IdPUESTO INT, @IdRETENCION INT
 AS
@@ -317,6 +348,7 @@ begin
 end
 GO
 
+CREATE PROC usp_buscar_empleado
 @idEmpleado CHAR(13)
 AS
 BEGIN

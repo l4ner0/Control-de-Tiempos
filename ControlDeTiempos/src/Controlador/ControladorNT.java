@@ -160,11 +160,14 @@ public class ControladorNT implements ActionListener {
             String telefono=vtnNuevoTrabajador.txtTelf.getText();
             String correoElectronico=vtnNuevoTrabajador.txtEmail.getText();
             String asignacionFamiliar=(String) vtnNuevoTrabajador.cbAsig.getSelectedItem();
-            String idArea=  (String)vtnNuevoTrabajador.cbArea.getSelectedItem();
-            String idPuesto=(String) vtnNuevoTrabajador.cbPuesto.getSelectedItem();
+            String nombreArea=  (String)vtnNuevoTrabajador.cbArea.getSelectedItem();
+            String nombrePuesto=(String) vtnNuevoTrabajador.cbPuesto.getSelectedItem();
             int idRetencion=Integer.parseInt((String) vtnNuevoTrabajador.cbReten.getSelectedItem());
             String rutaFoto=vtnNuevoTrabajador.txtRutaFoto.getText();
             String rutaCarnet = vtnNuevoTrabajador.txtRutaCarnet.getText();
+            
+            int idArea=empleadoDAO.getIdArea(nombreArea);
+            int idPuesto = empleadoDAO.getIdPuesto(nombrePuesto);
             
             boolean registro=empleadoDAO.InsertarEmpleado(idEmpleado,rutaFoto, nombres, 
                     apellidoPaterno, apellidoMaterno, sexo, DNI, fechaNacimiento, 
@@ -178,8 +181,8 @@ public class ControladorNT implements ActionListener {
                
                 carnet.generarCarnet("Nombre de la empresa", idEmpleado, 
                         apellidoPaterno+" "+apellidoMaterno+" "+nombres, 
-                        idArea, idPuesto,
-                        "Vencimiento: 09/11/2017",rutaFoto,
+                        nombreArea, nombrePuesto,
+                        "Vencimiento: 09/11/2018",rutaFoto,
                         rutaCarnet+idEmpleado);
                 
                 vtnNuevoTrabajador.txtApPa.setText("");

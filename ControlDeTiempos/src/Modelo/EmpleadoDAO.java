@@ -25,7 +25,7 @@ public class EmpleadoDAO {
         String nombres,String apellidoPaterno,String apellidoMaterno,String sexo,
         String DNI,String fechaNacimiento,String DistritoResidencia,
         String direccion,String telefono,String correoElectronico,
-        String asignacionFamiliar,String idArea,String idPuesto,
+        String asignacionFamiliar,int idArea,int idPuesto,
         int idRetencion ){
         
         boolean registro=false;
@@ -48,8 +48,8 @@ public class EmpleadoDAO {
            cs.setString(11,telefono);
            cs.setString(12,correoElectronico);
            cs.setString(13,asignacionFamiliar);
-           cs.setString(14,idArea);
-           cs.setString(15,idPuesto);
+           cs.setInt(14,idArea);
+           cs.setInt(15,idPuesto);
            cs.setInt(16,idRetencion);
            
            
